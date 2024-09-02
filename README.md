@@ -3,5 +3,5 @@
 ### Hecho por: Juan de Dios Ortiz Gerardo
 ***
 
-1. 03: Listas, multimedia y tablas. [Ejercicio 2](Ejercicio_2/Ejercicio-1.html)
+1. [03: Listas, multimedia y tablas](Ejercicio_2/Ejercicio-1.html)
 
