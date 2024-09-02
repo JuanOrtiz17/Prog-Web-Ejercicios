@@ -2,5 +2,5 @@
 ## Mis ejercios de Paginas Web
 ### Hecho por: Juan de Dios Ortiz Gerardo
 
-3.  [03: Listas, multimedia y tablas](Ejercicio_2/Ejercicio 1.html)
+3.  [03: Listas, multimedia y tablas](./Ejercicio_2/Ejercicio 1.html)
 
