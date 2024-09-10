@@ -1,0 +1,39 @@
+body{
+    background-color:  #e2fff7;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+p {
+    color:black;
+}
+
+.texto-morado{
+    color: indigo;
+    background-color: #43d0c1;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+h2{
+    color: indigo;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+img{
+    border-width: 5px;
+    border-style:solid;
+    border-color: indigo;
+}
+
+ul{
+    border-width: 3px;
+    border-style:solid;
+    border-color: rgb(61, 16, 94);
+    border-radius: 5px;
+}
+
+video{
+    border-width: 5px;
+    border-style:solid;
+    border-color: indigo;
+}
+
