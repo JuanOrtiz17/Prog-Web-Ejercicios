@@ -7,4 +7,4 @@
 2. [04: Formularios_Y_Metadatos](04_Formularios/index.html)
 3. [05: css_basico](01-Ejercicio-Css/index.html)
 4. [06: Tarjetas_css](02-Tarjeta-Css/index.html)
-5. [07: Header Sticky_css](03-Header-Css/index.html)
+5. [07: Header_Sticky_css](03-Header-Css/index.html)
