@@ -1,0 +1,111 @@
+body{
+    padding: 0;
+    margin: 0;
+    font-family: Fira Sans, Arial, Helvetica, sans-serif;
+}
+
+header {
+    background-color: #1f1f1f;
+    box-shadow: 0px 3px 25px 0 black;
+    position: sticky;
+    top: 0;
+    display: flex;
+    justify-content: flex-start; 
+    align-items: center;
+    padding: 0; 
+}
+
+.navegacion {
+    display: flex;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+}
+
+.logo {
+    height: 70px;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-bar {
+    display: flex;
+    margin-left: 190px; 
+    padding: 0;
+}
+
+.logo-image {
+    margin-top: 1%; 
+    margin-left: 250%;
+    height: 110%; 
+}
+
+.nav-link {
+    font-size: 28px;
+    text-decoration: none;
+    font-weight: bold;
+    margin: 0;
+    text-shadow: 2px 2px 5px rgba(40, 177, 166, 0.7);
+    
+}
+
+.container {
+    display: flex;
+    justify-content: left; 
+    align-items: center;
+    flex-grow: 1; 
+    padding: 0 20px;
+    margin-left: 20px;
+    position: relative;
+    
+}
+
+input{
+    padding: 5px;
+    border: 0;
+    width: 45%;
+    border-radius: 5px 0 0 5px;
+    outline: none;
+    font-size: 16px;
+    margin-right: 0px;
+}
+
+button{
+    padding: 6.9px;
+    background-color: #85BDBF;
+    border: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    margin: 0;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+}
+
+.ali {
+    color: #28B1A6; 
+    -webkit-text-stroke: 0.8px black;
+}
+
+.express {
+    color: #C2FCF7; 
+    -webkit-text-stroke: 0.8px black;
+}
+
+button2 {
+    color: white;
+    cursor: pointer;
+    margin-left: 70px; 
+    font-size: 25px;
+}
+
+a{
+    color: #C2FCF7;
+    -webkit-text-stroke: 0.8px black;
+    font-size: 18px;
+    text-decoration: none;
+    font-weight: bold;
+    margin-left: 15px;
+    text-shadow: 2px 2px 5px rgba(40, 177, 166, 0.5);
+
+}
