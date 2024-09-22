@@ -1,7 +1,7 @@
 body{
     padding: 0;
     margin: 0;
-    font-family: Fira Sans, Arial, Helvetica, sans-serif;
+    font-family: "Gowun Batang", serif;
 }
 
 header {
@@ -46,7 +46,6 @@ header {
     font-weight: bold;
     margin: 0;
     text-shadow: 2px 2px 5px rgba(40, 177, 166, 0.7);
-    
 }
 
 .container {
