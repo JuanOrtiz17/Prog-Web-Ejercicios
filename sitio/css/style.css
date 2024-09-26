@@ -1,0 +1,248 @@
+body{
+    padding: 0;
+    margin: 0;
+    font-family:Arial, Helvetica, sans-serif
+    
+}
+
+header {
+    background-color: #1f1f1f;
+    box-shadow: 0px 3px 25px 0 black;
+    position: sticky;
+    top: 0;
+    display: flex;
+    justify-content: flex-start; 
+    align-items: center;
+    padding: 0; 
+}
+
+.navegacion {
+    display: flex;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+}
+
+.logo {
+    height: 70px;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-bar {
+    display: flex;
+    margin-left: 190px; 
+    padding: 0;
+}
+
+.logo-image {
+    margin-top: 1%; 
+    margin-left: 250%;
+    height: 110%; 
+}
+
+.nav-link {
+    font-size: 28px;
+    text-decoration: none;
+    font-weight: bold;
+    margin: 0;
+    text-shadow: 2px 2px 5px rgba(40, 177, 166, 0.7);
+}
+
+.container {
+    display: flex;
+    justify-content: left; 
+    align-items: center;
+    flex-grow: 1; 
+    padding: 0 20px;
+    margin-left: 20px;
+    position: relative;
+    
+}
+
+input{
+    padding: 5px;
+    border: 0;
+    width: 45%;
+    border-radius: 5px 0 0 5px;
+    outline: none;
+    font-size: 16px;
+    margin-right: 0px;
+}
+
+button{
+    padding: 6.9px;
+    background-color: #85BDBF;
+    border: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    margin: 0;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+}
+
+.ali {
+    color: #28B1A6; 
+    -webkit-text-stroke: 0.8px black;
+}
+
+.express {
+    color: #C2FCF7; 
+    -webkit-text-stroke: 0.8px black;
+}
+
+button2 {
+    color: white;
+    cursor: pointer;
+    margin-left: 70px; 
+    font-size: 25px;
+}
+
+a{
+    color: #C2FCF7;
+    -webkit-text-stroke: 0.3px black;
+    font-size: 18px;
+    text-decoration: none;
+    font-weight: bold;
+    margin-left: 15px;
+}
+
+.menu-container {
+    position: relative; 
+    display: inline-block; 
+}
+
+.menu-button {
+    color: white;
+    cursor: pointer;
+    margin-left: 70px; 
+    font-size: 25px;
+    background: none;
+    border: none;
+    position: relative;
+}
+
+.submenu {
+    display: none;
+    position: absolute;
+    background-color: white;
+    width: 200px;
+    z-index: 1001;
+    top: 65%; 
+    right: -85px; 
+    padding: 0;
+    box-shadow: 2px 2px 5px 0 gray;
+    border-radius: 5px;
+}
+
+.menu-container:hover .submenu {
+    display: block; 
+}
+
+.submenu li {
+    text-align: left;
+    padding: 0;
+    display: block;
+    padding: 10px;
+}
+
+.submenu li:hover {
+    background: rgb(230, 229, 229);
+}
+
+.menu-secundario {
+    background-color: #313131;
+    padding: 10px 0;
+    border-top: 1px solid #313131;
+    border-bottom: 1px solid #313131;
+    z-index: 999;
+    position: relative;
+}
+
+.menu-secundario ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    margin: 0;
+    padding: 0;
+}
+
+.menu-secundario ul li {
+    display: inline;
+}
+
+.menu-secundario ul li a {
+    text-decoration: none;
+    color: white; 
+    font-size: 16px;
+    font-weight: bold;
+    padding: 10px 20px;
+    transition: background-color 0.3s ease;
+}
+
+.menu-secundario ul li a:hover {
+    background-color: #555555; 
+    border-radius: 5px;
+}
+
+.hero-container {
+    width: 100%;
+    display: flex;
+    min-height: 400px;
+    background: #2D6FA4;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    overflow: hidden;
+}
+
+.hero-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: rgb(226, 226, 226);
+    flex: 0 1 40%;
+    text-align: center;
+    justify-content: center;
+}
+
+.hero-content h2 {
+    font-size: 4em;
+    margin: 0;
+    padding: 0 25px;
+}
+
+.hero-content p {
+    font-size: 2em;
+}
+
+.hero-content button {
+    background: #2c2c2c;
+    min-width: 150px;
+    min-height: 40px;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+    font-size: 1em;
+}
+
+.hero-content button:hover {
+    background: #3bc7a9;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.hero-img {
+    display: flex;
+}
+
+.hero-img img {
+    align-self: center;
+    height: 80%;
+}
+
+h2{
+    color:#ca121b;
+    -webkit-text-stroke: 1px black;
+}
