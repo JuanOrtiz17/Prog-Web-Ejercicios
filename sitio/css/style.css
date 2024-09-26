@@ -7,7 +7,6 @@ body{
 
 header {
     background-color: #1f1f1f;
-    box-shadow: 0px 3px 25px 0 black;
     position: sticky;
     top: 0;
     display: flex;
@@ -110,7 +109,7 @@ a{
 
 .menu-container {
     position: relative; 
-    display: inline-block; 
+    display: inline-block;
 }
 
 .menu-button {
@@ -156,8 +155,6 @@ a{
     padding: 10px 0;
     border-top: 1px solid #313131;
     border-bottom: 1px solid #313131;
-    z-index: 999;
-    position: relative;
 }
 
 .menu-secundario ul {
