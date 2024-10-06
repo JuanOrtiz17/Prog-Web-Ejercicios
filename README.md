@@ -9,4 +9,5 @@
 4. [06: Tarjetas_css](02-Tarjeta-Css/index.html)
 5. [07: Header_Sticky_css](03-Header-Css/index.html)
 6. [08: Formulario_con_estilos_css](04-Formulario-Css/index.html)
-7. [09: Sitio](sitio/index.html)
+7. [09: Variables_y_funciones](06-variables-y-funciones/index.html)
+8. [10: Sitio](sitio/index.html)
