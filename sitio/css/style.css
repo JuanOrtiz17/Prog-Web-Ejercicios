@@ -16,15 +16,14 @@ body{
     
 }
 
-body.pagina2{
-    background-color: #3d3d3d;
-}
-
 header {
     background-color: #1f1f1f;
     position: sticky;
     top: 0;
     display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 100%;
     justify-content: flex-start; 
     align-items: center;
     padding: 0; 
@@ -54,10 +53,11 @@ header {
     margin-top: 1%; 
     margin-left: 250%;
     height: 110%; 
+    
 }
 
 .nav-link {
-    font-size: 28px;
+    font-size: 1.75rem;
     text-decoration: none;
     font-weight: bold;
     margin: 0;
@@ -560,6 +560,10 @@ h2{
   
  /*********************************pagina2********************************/
 
+ body.pagina2{
+    background-color: #3d3d3d;
+}
+
 .container-text-center{
     margin-top: 40px;
     margin-left: 200px;
@@ -727,3 +731,10 @@ h2{
     font-size: 16px; 
 }
 
+
+
+/******************************************Página 3**************************************************************************/
+
+
+
+/******************************************Página 3**************************************************************************/

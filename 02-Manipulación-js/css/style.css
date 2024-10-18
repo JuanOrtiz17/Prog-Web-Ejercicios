@@ -1,0 +1,30 @@
+body{
+    margin: 10%;
+}
+
+.bloque{
+    border: 1px solid rgb(29, 29, 29);
+    width: 40%;
+    text-align: center;
+    padding: 2%;
+    border-radius: 10px;
+}
+
+button{
+    width: 20%;
+    height: 35px;
+    border-radius: 10px;
+    margin: 10px;
+}
+
+.boton-rojo{
+    background-color: #c03b3b;
+}
+
+.boton-verde{
+    background-color: #36bd5e;
+}
+
+.boton-azul{
+    background-color: #3b9bf5;
+}
