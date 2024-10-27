@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />  
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="contenedor">
+        <div class="calculadora">
+            <div class="input">
+                <input class="form-control" type="text" id="result" placeholder="0" readonly>
+            </div>
+            <div class="botones">
+                <button onclick="appendToResult('7')">7</button>   
+                <button onclick="appendToResult('8')">8</button>
+                <button onclick="appendToResult('9')">9</button>
+                <button onclick="appendToResult('/')">/</button>
+
+                <button onclick="appendToResult('4')">4</button>
+                <button onclick="appendToResult('5')">5</button>
+                <button onclick="appendToResult('6')">6</button>
+                <button onclick="appendToResult('*')">*</button>
+
+                <button onclick="appendToResult('1')">1</button>
+                <button onclick="appendToResult('2')">2</button>
+                <button onclick="appendToResult('3')">3</button>
+                <button onclick="appendToResult('-')">-</button>
+
+                <button onclick="appendToResult('0')">0</button>
+                <button onclick="calculateResult()">=</button>
+                <button onclick="clearResult()">C</button>
+                <button onclick="appendToResult('+')">+</button>
+            </div>
+        </div>
+        <div class="historial">
+            <h3>Historial</h3>
+            <ul id="historyList"></ul>
+        </div>
+    </div>
+    
+    <script>
+        const historyList = document.getElementById('historyList');
+
+        function appendToResult(value) {
+            const resultField = document.getElementById('result');
+            // Si el resultado actual es 0, reemplaza el valor, de lo contrario, agrega el nuevo valor
+            resultField.value = resultField.value === '0' ? value : resultField.value + value;
+        }
+
+        function clearResult() {
+            document.getElementById('result').value = '0'; // Reinicia el resultado
+        }
+
+        function calculateResult() {
+            const resultField = document.getElementById('result');
+            const expression = resultField.value;
+
+            try {
+                const result = eval(expression);
+                if (result === undefined) throw new Error("Invalid operation");
+                resultField.value = result; // Muestra el resultado en el input
+                addToHistory(`${expression} = ${result}`); // Agrega al historial
+            } catch (error) {
+                resultField.value = 'Error'; // Muestra un mensaje de error si la evaluación falla
+                addToHistory(`Error: ${error.message}`); // Agrega el error al historial
+            }
+        }
+
+        function addToHistory(entry) {
+            const listItem = document.createElement('li');
+            listItem.textContent = entry;
+            historyList.appendChild(listItem);
+        }
+    </script>
+</body>
+</html>

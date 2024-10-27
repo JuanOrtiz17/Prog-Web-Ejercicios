@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Tareas</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="lista-tareas">
+        <h2>Mi Lista de Tareas</h2>
+        <ul id="lista-tareas"></ul>
+        <input type="text" id="pantalla" placeholder="Ingresa el texto...">
+        <button onclick="agregarTarea()" class="agregar">Agregar</button>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', cargarTareas);
+
+        function agregarTarea() {
+            const pantalla = document.getElementById('pantalla');
+            const tareaTexto = pantalla.value.trim();
+            if (tareaTexto) {
+                const tarea = { texto: tareaTexto, completada: false };
+                const tareas = obtenerTareas();
+                tareas.push(tarea);
+                guardarTareas(tareas);
+                pantalla.value = '';
+                mostrarTarea(tarea);
+            }
+        }
+
+        function mostrarTarea(tarea) {
+            const lista = document.getElementById('lista-tareas');
+            const li = document.createElement('li');
+            li.innerHTML = `
+                <input type="checkbox" ${tarea.completada ? 'checked' : ''} onchange="marcarTarea('${tarea.texto}')">
+                <span ${tarea.completada ? 'style="text-decoration: line-through;"' : ''}>${tarea.texto}</span>
+                <button onclick="eliminarTarea('${tarea.texto}')">Eliminar</button>
+            `;
+            lista.appendChild(li);
+        }
+
+        function cargarTareas() {
+            const tareas = obtenerTareas();
+            tareas.forEach(tarea => mostrarTarea(tarea));
+        }
+
+        function obtenerTareas() {
+            return JSON.parse(localStorage.getItem('tareas')) || [];
+        }
+
+        function guardarTareas(tareas) {
+            localStorage.setItem('tareas', JSON.stringify(tareas));
+        }
+
+        function eliminarTarea(texto) {
+            let tareas = obtenerTareas();
+            tareas = tareas.filter(tarea => tarea.texto !== texto);
+            guardarTareas(tareas);
+            document.getElementById('lista-tareas').innerHTML = '';
+            cargarTareas();
+        }
+
+        function marcarTarea(texto) {
+            const tareas = obtenerTareas();
+            tareas.forEach(tarea => {
+                if (tarea.texto === texto) tarea.completada = !tarea.completada;
+            });
+            guardarTareas(tareas);
+            document.getElementById('lista-tareas').innerHTML = '';
+            cargarTareas();
+        }
+    </script>
+    
+</body>
+</html>

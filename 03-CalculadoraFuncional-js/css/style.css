@@ -1,0 +1,77 @@
+.contenedor {
+    display: flex; /* Cambia a flexbox para alinear elementos en fila */
+    justify-content: space-between; /* Espaciado entre calculadora y historial */
+    margin: 10%; /* Margen externo */
+}
+
+.calculadora {
+    background-color: rgb(235, 235, 235);
+    width: 40%; /* Ajusta el ancho de la calculadora */
+    border: 1px solid rgb(0, 0, 0);
+    box-shadow: 2px 2px 5px 2px rgb(178, 178, 178);
+    display: flex;
+    flex-direction: column; 
+    padding: 20px; /* Espaciado interno para los bordes */
+    box-sizing: border-box; /* Incluye el padding en el tamaño total */
+}
+
+.input {
+    width: 100%; 
+    margin-top: 10px; 
+}
+
+.form-control {
+    width: 100%; 
+    height: 40px; 
+    box-sizing: border-box; 
+    text-align: right; /* Alinear el texto a la derecha */
+    padding: 5px; /* Espaciado interno para el input */
+    pointer-events: none; /* Deshabilita los eventos de puntero (no se puede hacer clic) */
+    background-color: rgb(220, 220, 220); /* Cambia el color de fondo para mostrar que está deshabilitado */
+}
+
+.botones {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); 
+    gap: 10px; 
+    margin-top: 20px; 
+    width: 100%; 
+}
+
+button {
+    width: 100%; 
+    height: 40px; 
+    justify-content: center;
+    background-color: rgb(102, 153, 255);
+    color: white;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer; /* Cambia el cursor al pasar el mouse */
+    margin: 5px 0; /* Margen superior e inferior para los botones */
+    transition: background-color 0.3s; /* Animación suave al cambiar de color */
+}
+
+button:hover {
+    background-color: rgb(70, 130, 180); /* Cambia este color según tus preferencias */
+}
+
+.historial {
+    margin-left: 20px; /* Espacio a la izquierda para separar el historial de la calculadora */
+    width: 40%; /* Ajusta el ancho del historial */
+    max-height: 400px; /* Altura máxima para el área de historial */
+    overflow-y: auto; /* Permite el desplazamiento vertical */
+    background-color: rgb(235, 235, 235); /* Fondo del historial */
+    border: 1px solid rgb(0, 0, 0); /* Borde del historial */
+    padding: 10px; /* Espaciado interno para el historial */
+    box-sizing: border-box; /* Incluye el padding en el tamaño total */
+}
+
+.historial h3 {
+    margin: 0; /* Quitar margen en el título */
+}
+
+#historyList {
+    list-style-type: none; /* Sin viñetas en la lista */
+    padding: 0; /* Sin padding */
+    margin: 0; /* Sin margen */
+}

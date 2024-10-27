@@ -1,0 +1,88 @@
+body{
+    background-color:#101414;
+}
+
+.lista-tareas{
+    border: 1px solid black;
+    background: linear-gradient(to top,#474747, #282828);
+    width: 50%;
+    height: 350px;
+    margin: 10%;
+    border-radius: 20px;
+    box-shadow: 2px 2px 8px rgb(72, 72, 72);
+}
+
+h2{
+    font-size: 30px;
+    color: white;
+    text-align: center;
+}
+
+input{
+    width: 80%;
+    height: 35px;
+    border-radius: 10px;
+    justify-content: center;
+    margin-left: 4%;
+    border: 1px solid #f3f3f3;
+    background-color: rgb(209, 209, 209);
+    font-size: 16px;
+    color: black;
+}
+
+.agregar{
+    background-color: #289c94;
+    width: 10%;
+    height: 40px;
+    border-radius: 10px;
+    color: white
+}
+
+button{
+    font-size: 16px;
+    border: 1px solid #289c94;
+    margin-left: 1%;
+    cursor: pointer;
+}
+
+button:hover{
+    background-color: #39c7bd;
+    
+}
+
+
+li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+li span {
+    flex: 1;
+    color: white;
+    margin-left: 10px;
+    font-size: 20px;
+}
+
+li button {
+    background-color: #289c94;
+    color: white;
+    padding: 5px 10px;
+    margin-right: 5%;
+    font-size: 16px;
+    border: 1px solid #289c94;
+    cursor: pointer;
+    height: 40px;
+    border-radius: 10px;
+}
+
+li button:hover {
+    background-color: #39c7bd;
+    
+}
+
+li input[type="checkbox"] {
+    height: 30px;
+    width: 30px;
+    margin: 0;
+}

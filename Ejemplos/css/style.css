@@ -6,7 +6,6 @@ body{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-top: 100px;
     background-color: rgb(41, 41, 41);
     height: 100%;
     overflow: hidden;
@@ -122,3 +121,10 @@ p{
 .fate-button-sound  i {
     font-size: 24px;
 }
+
+
+
+
+
+
+
