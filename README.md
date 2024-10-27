@@ -14,4 +14,5 @@
 9. [11: Sitio_Responsivo](08-Sitio-Responsivo-Css)
 10. [12: Examen](Examen-Sitio-Web/index.html)
 11. [13: CalculadoraJS](01-Calculadora-js/index.html)
-12. [14: Sitio](sitio/index.html)
+12. [14: Manipulacion_de_estilos](02-Manipulación-js/index.html)
+13. [15: Sitio](sitio/index.html)
