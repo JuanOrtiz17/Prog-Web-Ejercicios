@@ -25,7 +25,7 @@
 
         <div class="container">
             <input type="text" placeholder="Buscar...">
-            <button><i class="fa-solid fa-magnifying-glass"></i></button>
+            <button class="Boton-buscar"><i class="fa-solid fa-magnifying-glass"></i></button>
 
             <button2><i class="fa-solid fa-bell"></i></button2>
             <button2><i class="fa-solid fa-cart-shopping"></i></button2>
@@ -63,8 +63,142 @@
     </nav>
 
     <main>
+        
+        <div id="carouselExampleCaptions" class="carousel slide">
+            <!-- Se elimina el data-bs-ride="carousel" para desactivar el autoavance -->
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            </div>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="carousel-content">
+                        <div class="carousel-text">
+                            <h5>Fate/Stay Night Heaven´s Feel III: Spring Song</h5>
+    
+                            <p class="textoP">Película - 2hr 20min - 2021 
+                                <button class="fate-button2" disabled>Sub</button> <button class="fate-button2" disabled>+17</button> 
+                            </p>
+                            <p class="textoP">La culminación de una trilogía épica que explora el destino de aquellos involucrados 
+                                en la Guerra del Santo Grial, un recipiente capaz de cumplir el deseo de cualquiera que lo reclame. <br>
+                                La trilogía más ambiciosa llega a su fin, dejando un legado de emociones intensas y conflictos irreconciliables.</p> 
+    
+                            <p class="textoP">Animación - Acción - Aventura - Drama</p> 
+    
+                            <button class="fate-button"><i class="fa-solid fa-caret-right"></i> Ver ya</i></button>
+                            <button class="fate-button"><i class="fa-solid fa-plus"></i> Agregar a</button>
+    
+                            <button class="fate-button-sound " id="volumeButton">
+                                <i class="fa-solid fa-volume-mute"></i>
+                            </button>
+                            
+                        </div>
+                        <div class="carousel-image">
+                            <img src="img/FateH1.png" class="d-block w-100" alt="First slide image" id="carouselImage">
+                            <video id="carouselVideo" class="carousel-video" controls muted>
+                                <source src="vids/FateVideo3.mp4" type="video/mp4">
+                                Tu navegador no soporta el elemento de video.
+                            </video>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="carousel-content">
+                        <div class="carousel-text">
+                            <h5>Second slide label</h5>
+                            <p>Some representative placeholder content for the second slide.</p>
+                        </div>
+                        <div class="carousel-image">
+                            <img src="img/FateH2.jpg" class="d-block w-100" alt="Second slide image">
+                            <video id="carouselVideo" class="carousel-video" controls muted>
+                                <source src="vids/ku.mp4" type="video/mp4">
+                                Tu navegador no soporta el elemento de video.
+                            </video>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="carousel-content">
+                        <div class="carousel-text">
+                            <h5>Third slide label</h5>
+                            <p>Some representative placeholder content for the third slide.</p>
+                        </div>
+                        <div class="carousel-image">
+                            <img src="img/FateH3.jpg" class="d-block w-100" alt="Third slide image">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
 
+        <div class="contenedor-que-contiene-contenedor-card">
+            <h1 class="recomendaciones">Nuestras recomendaciones</h1>
+        <div class="card-container">            
+            <div class="card">
+                <img src="img/Blood.jpe" class="card-img-top" alt="..." onclick="location.href='index4.html';">
+            </div>
+            
+            <div class="card">
+                <img src="img/Sonny.jpg" class="card-img-top" alt="..."  onclick="location.href='index4.html';">
+            </div>
+
+            <div class="card">
+                <img src="img/noragami.jpe" class="card-img-top" alt="..."  onclick="location.href='index4.html';">
+            </div>
+
+            <div class="card">
+                <img src="img/click.jpg" class="card-img-top" alt="..."  onclick="location.href='index4.html';">
+            </div>
+
+            <div class="card">
+                <img src="img/Eighty.jpg" class="card-img-top" alt="..."  onclick="location.href='index4.html';">
+            </div>
+
+            <div class="card">
+                <img src="img/death.jpg" class="card-img-top" alt="..."  onclick="location.href='index4.html';">
+            </div>   
+        </div>
+    </div>
+
+    <div class="contenedor-que-contiene-contenedor-card">
+        <h1 class="recomendaciones">Películas</h1>
+    <div class="card-container">            
+        <div class="card">
+            <img src="img/perfect.jpg" class="card-img-top" alt="..." onclick="location.href='index4.html';">
+        </div>
+        
+        <div class="card">
+            <img src="img/Kara_11zon.jpeg" class="card-img-top" alt="..."  onclick="location.href='index4.html';">
+        </div>
+
+        <div class="card">
+            <img src="img/KurokoL.jpg" class="card-img-top" alt="..."  onclick="location.href='index4.html';">
+        </div>
+
+        <div class="card">
+            <img src="img/uma.jpg" class="card-img-top" alt="..."  onclick="location.href='index4.html';">
+        </div>
+
+        <div class="card">
+            <img src="img/haikyuuM.jpg" class="card-img-top" alt="..."  onclick="location.href='index4.html';">
+        </div>
+
+        <div class="card">
+            <img src="img/death.jpg" class="card-img-top" alt="..."  onclick="location.href='index4.html';">
+        </div>   
+    </div>
+</div>
     </main>
     
+    <script src="index.js"></script>
 </body>
 </html>
