@@ -1,148 +1,151 @@
-body{
-    background-color: rgb(49, 49, 49);
-}
-
-.carousel-content {
+/* Estilos generales para el cuerpo */
+body {
     display: flex;
-    justify-content: space-between;
+    padding: 0 35px;
     align-items: center;
-    background-color: rgb(41, 41, 41);
-    height: 100%;
-    overflow: hidden;
-    
+    justify-content: center;
+    min-height: 100vh;
+    background: #242F4F;
 }
 
-.carousel-inner {
-    height: 600px; /* Ajusta este valor para hacer el carrusel más grande */
-    
-}
-
-.carousel-text {
-    flex: 0 0 30%; /* Ocupa el 50% del espacio */
-    padding: 20px;
-    color: white; /* Asegura que el texto sea visible */
-    background-color: rgba(0, 0, 0, 0.5); /* Fondo semi-transparente */
-    z-index: 10;
-    position: relative;
-    height: 450px;
-    
-}
-
-.carousel-image {
-    flex: 0 0 70%;/* Ocupa el otro 50% del espacio */
-    height: 100%;
-    width: 50%;
-    position: relative;
-    overflow: hidden;
-    border-left: 5px solid #28B1A6;
-}
-
-.carousel-image img {
+/* Contenedor general para ambos carruseles */
+.carousel-container {
     width: 100%;
-    height: 100%;
-    object-fit: cover; /* Asegura que la imagen ocupe el contenedor sin desbordarse */
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 1; /* Asegúrate de que la imagen esté detrás del degradado */
-    opacity: 1; 
-    transition: opacity 0.5s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px; 
 }
 
-
-.carousel-video {
-    display: none;
-    width: 100%;
-}
-
-h5{
-    color: aquamarine;
-    margin-top: 10px;
-    font-size: 25px;
-    margin-bottom: 20px;
-}
-.textoP{
-    color: #dddddd;
-    font-size: 17px;
-    margin-top: 30px;
-}
-
-
-.carousel-image::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 50%; 
-    background: linear-gradient(to right, rgba(0, 0, 0, 0.5), transparent); 
-    z-index: 5; 
-}
-#carouselVideo {
-    display: none;
-    width: 100%;
-    height: 100%;
-    transform: scale(1.2);
-    object-fit: cover;
-    position: absolute;
-    top: 0;
-    left: 0;
-    opacity: 0; 
-    transition: opacity 0.5s ease-in-out; 
-}
-
-.carousel-item {
-    position: relative;
-    height: 100%;
-}
-
-.carousel-image, .carousel-video {
-    height: 100%;
-}
-
-.carousel-control-prev,
-.carousel-control-next {
-    position: absolute; 
-    top: 50%; 
-    transform: translateY(-50%); 
-    width: 50px; 
-    height: 50px; 
-    z-index: 10; 
-}
-
-.carousel-control-prev {
-    left: 10px; 
-}
-
-.carousel-control-next {
-    right: 10px; 
-}
-
-.fate-button{
-    background-color: #28B1A6;
-    border-radius: 10px;
-    height: 40px;
-    border: none;
+/* Estilo para el título */
+.carousel-container h2 {
+    font-size: 2rem;
+    font-weight: 600;
     color: #ffffff;
-    margin-right: 10px;
+    margin-bottom: 20px;
+    
 }
 
-.fate-button2{
-    background-color: rgb(80, 80, 80);
-    height: 30px;
-    border-radius: 5px;
-    border: none;
-    color: rgb(221, 221, 221);
+/* Estilo específico para los títulos "Recomendaciones" */
+#recommendations-title {
+    font-size: 2rem;
+    font-weight: 600;
+    color: #d8d8d8;
+    position: relative;
+    top: 30px;  
+    left: -720px;  /* Ajusta la posición del título */
 }
 
-.fate-button-sound {
+/* Estilos para los contenedores de los carruseles */
+.carousel-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 35px;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Contenedor interno que maneja el carrusel */
+.wrapper {
+    max-width: 1700px;
+    position: relative;
+}
+
+/* Estilos para los íconos de navegación */
+.wrapper i {
+    position: absolute;
+    top: 50%;
     width: 40px;
     height: 40px;
-    font-size: 20px;
-    border-radius: 50px;
-    border: none;
-
+    background: white;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    line-height: 40px;
+    text-align: center;
+    cursor: pointer;
+    transform: translateY(-50%);
+    z-index: 1000;
 }
+
+.wrapper i:first-child {
+    left: -23px;
+}
+
+.wrapper i:last-child {
+    right: -23px;
+}
+
+/* Estilos para el carrusel */
+.wrapper .carousel {
+    font-size: 0px;
+    cursor: pointer;
+    overflow: hidden;
+    white-space: nowrap;
+    scroll-behavior: smooth;
+}
+
+/* Estilo para las imágenes dentro del carrusel */
+.carousel img {
+    height: 400px;
+    object-fit: cover;
+    margin-left: 20px;
+    width: calc(100% / 6);
+    transition: transform 0.3s ease;
+}
+
+.carousel img:first-child {
+    margin-left: 0px;
+}
+
+/* Media queries para hacer que el carrusel sea responsivo */
+@media screen and (max-width: 900px) {
+    .carousel img {
+        width: calc(100% / 2);
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .carousel img {
+        width: 100%;
+    }
+}
+
+/* Efectos al pasar el ratón sobre las imágenes */
+.carousel img:hover {
+    background-color: rgba(14, 14, 14, 0.5);
+    transform: scale(1.05);
+    z-index: 1;
+    cursor: pointer;
+}
+
+/* Estilos generales para el carrusel */
+.carousel {
+    display: flex;
+    transition: all 0.3s ease;
+}
+
+/* Estilos para los botones de navegación */
+.carousel-button {
+    position: absolute;
+    top: 50%;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
+}
+
 
 
 

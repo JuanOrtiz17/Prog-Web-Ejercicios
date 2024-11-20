@@ -9,167 +9,57 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=arrow_forward" />
 
+    <script src="script.js" defer></script>
 </head>
 <body>
-    <div id="carouselExampleCaptions" class="carousel slide">
-        <!-- Se elimina el data-bs-ride="carousel" para desactivar el autoavance -->
-        <div class="carousel-indicators">
-            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
-            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
-        </div>
-        <div class="carousel-inner">
-            <div class="carousel-item active">
-                <div class="carousel-content">
-                    <div class="carousel-text">
-                        <h5>Fate/Stay Night Heaven´s Feel III: Spring Song</h5>
-
-                        <p class="textoP">Película - 2hr 20min - 2021 
-                            <button class="fate-button2" disabled>Sub</button> <button class="fate-button2" disabled>+17</button> 
-                        </p>
-                        <p class="textoP">La culminación de una trilogía épica que explora el destino de aquellos involucrados 
-                            en la Guerra del Santo Grial, un recipiente capaz de cumplir el deseo de cualquiera que lo reclame. <br>
-                            La trilogía más ambiciosa llega a su fin, dejando un legado de emociones intensas y conflictos irreconciliables.</p> 
-
-                        <p class="textoP">Animación - Acción - Aventura - Drama</p> 
-
-                        <button class="fate-button"><i class="fa-solid fa-caret-right"></i> Ver ya</i></button>
-                        <button class="fate-button"><i class="fa-solid fa-plus"></i> Agregar a</button>
-
-                        <button class="fate-button-sound " id="volumeButton">
-                            <i class="fa-solid fa-volume-mute"></i>
-                        </button>
-                        
-                    </div>
-                    <div class="carousel-image">
-                        <img src="img/FateH1.png" class="d-block w-100" alt="First slide image" id="carouselImage">
-                        <video id="carouselVideo" class="carousel-video" controls muted>
-                            <source src="vids/FateVideo3.mp4" type="video/mp4">
-                            Tu navegador no soporta el elemento de video.
-                        </video>
-                    </div>
+    <div class="carousel-container">
+        <h2 id="recommendations-title">Recomendaciones</h2>
+        <!-- Primer Carrusel -->
+        <div class="carousel-wrapper">
+            <div class="wrapper">
+                <i id="left1" class="fa-solid fa-angle-left"></i>
+                <div class="carousel" id="carousel1">
+                    <img src="img/Blood.jpe" alt="img" onclick="location.href='index4.html';">
+                    <img src="img/Sonny.jpg" alt="img" onclick="location.href='index4.html';">
+                    <img src="img/noragami.jpe" alt="img" onclick="location.href='index4.html';">
+                    <img src="img/click.jpg" alt="img" onclick="location.href='index4.html';">
+                    <img src="img/Eighty.jpg" alt="img" onclick="location.href='index4.html';">
+                    <img src="img/trigun.jpg" alt="img" onclick="location.href='index4.html';">
+                    <img src="img/Megalobox.jpg" alt="img" onclick="location.href='index4.html';">
+                    <img src="img/kuroko.jpg" alt="img" onclick="location.href='index4.html';">
+                    <img src="img/Meka.jpg" alt="img" onclick="location.href='index4.html';">
+                    <img src="img/Kizumonogatari-III.jpg" alt="img" onclick="location.href='index4.html';">
+                    <img src="img/death.jpg" alt="img" onclick="location.href='index4.html';">
+                    <img src="img/perfect.jpg" alt="img" onclick="location.href='index4.html';">
                 </div>
-            </div>
-            <div class="carousel-item">
-                <div class="carousel-content">
-                    <div class="carousel-text">
-                        <h5>Second slide label</h5>
-                        <p>Some representative placeholder content for the second slide.</p>
-                    </div>
-                    <div class="carousel-image">
-                        <img src="img/FateH2.jpg" class="d-block w-100" alt="Second slide image">
-                        <video id="carouselVideo" class="carousel-video" controls muted>
-                            <source src="vids/ku.mp4" type="video/mp4">
-                            Tu navegador no soporta el elemento de video.
-                        </video>
-                    </div>
-                </div>
-            </div>
-            <div class="carousel-item">
-                <div class="carousel-content">
-                    <div class="carousel-text">
-                        <h5>Third slide label</h5>
-                        <p>Some representative placeholder content for the third slide.</p>
-                    </div>
-                    <div class="carousel-image">
-                        <img src="img/FateH3.jpg" class="d-block w-100" alt="Third slide image">
-                    </div>
-                </div>
+                <i id="right1" class="fa-solid fa-angle-right"></i>
             </div>
         </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-        </button>
-    </div>
-
-    <script>
-        var video = document.getElementById('carouselVideo');
-        var image = document.getElementById('carouselImage');
-        var timeoutId;
-
-        // Desactiva el avance automático del carousel
-        var carouselElement = document.getElementById('carouselExampleCaptions');
-        var carousel = new bootstrap.Carousel(carouselElement, {
-            interval: false  // Desactivar el autoavance
-        });
-
-        // Función para mostrar el video
-        function showVideo() {
-            // Ocultar la imagen
-            image.style.opacity = '0'; // Cambiado a 'opacity' para la transición
-            // Mostrar el video y reproducirlo
-            video.style.display = 'block';
-            setTimeout(function() {
-                video.style.opacity = 1; // Hace visible el video
-            }, 30); // Tiempo para que se aplique la transición
-            video.play();
-            
-        }
-
         
-
-        // Esperar 3 segundos para cambiar la imagen por el video
-        function startVideoTimer() {
-            timeoutId = setTimeout(showVideo, 3000);  // 3000 milisegundos = 3 segundos
-        }
-
-        // Evento para quitar el video y restaurar la imagen al cambiar de diapositiva
-        document.getElementById('carouselExampleCaptions').addEventListener('slid.bs.carousel', function () {
-            // Ocultar el video y reiniciar su reproducción
-            video.style.opacity = '0'; // Cambiar a 'opacity' para la transición
-            video.pause();
-            video.currentTime = 0; // Reiniciar el video
-
-            // Restaurar la imagen y reiniciar el temporizador si es la primera diapositiva
-            if (document.querySelector('.carousel-item.active') === document.querySelector('.carousel-item:first-child')) {
-                setTimeout(function() {
-                    image.style.opacity = '1'; // Aparece la imagen
-                    video.style.display = 'none'; // Oculta el video
-                }, 500); // Tiempo para la transición
-                clearTimeout(timeoutId); // Limpiar el temporizador anterior
-                startVideoTimer(); // Reiniciar el temporizador para el video
-            } else {
-                image.style.opacity = '1';   // Asegurarse de que la imagen esté visible si no es la primera
-            }
-        });
-
-        // Iniciar el temporizador cuando se carga la página
-        window.onload = function() {
-            // Asegurarse de que el video y la imagen estén en su estado inicial
-            image.style.opacity = '1';  // Asegurar que la imagen esté visible al cargar
-            video.style.display = 'none';    // Asegurar que el video esté oculto al cargar
-            startVideoTimer();  // Iniciar el temporizador
-        };
-    </script>
-
-<script> //Poner o quitar sonido
-    // Seleccionar el video y el botón
-    var video = document.getElementById('carouselVideo');
-    var volumeButton = document.getElementById('volumeButton');
-    var volumeIcon = volumeButton.querySelector('i');
-
-    // Función para alternar el volumen del video
-    function toggleVolume() {
-        if (video.muted) {
-            video.muted = false;  // Activar el volumen
-            volumeIcon.classList.remove('fa-volume-mute');
-            volumeIcon.classList.add('fa-volume-high');  // Cambiar el ícono a volumen alto
-        } else {
-            video.muted = true;  // Silenciar el video
-            volumeIcon.classList.remove('fa-volume-high');
-            volumeIcon.classList.add('fa-volume-mute');  // Cambiar el ícono a silencio
-        }
-    }
-
-    // Añadir el evento de clic al botón
-    volumeButton.addEventListener('click', toggleVolume);
-</script>
-
+        <!-- Segundo Carrusel -->
+        <h2 id="recommendations-title">Recomendaciones</h2>
+        <div class="carousel-wrapper">
+            <div class="wrapper">
+                <i id="left2" class="fa-solid fa-angle-left"></i>
+                <div class="carousel" id="carousel2">
+                    <img src="img/Blood.jpe" alt="img" onclick="location.href='index4.html';">
+                    <img src="img/Sonny.jpg" alt="img" onclick="location.href='index4.html';">
+                    <img src="img/noragami.jpe" alt="img" onclick="location.href='index4.html';">
+                    <img src="img/click.jpg" alt="img" onclick="location.href='index4.html';">
+                    <img src="img/Eighty.jpg" alt="img" onclick="location.href='index4.html';">
+                    <img src="img/trigun.jpg" alt="img" onclick="location.href='index4.html';">
+                    <img src="img/Megalobox.jpg" alt="img" onclick="location.href='index4.html';">
+                    <img src="img/kuroko.jpg" alt="img" onclick="location.href='index4.html';">
+                    <img src="img/Meka.jpg" alt="img" onclick="location.href='index4.html';">
+                    <img src="img/Kizumonogatari-III.jpg" alt="img" onclick="location.href='index4.html';">
+                    <img src="img/death.jpg" alt="img" onclick="location.href='index4.html';">
+                    <img src="img/perfect.jpg" alt="img" onclick="location.href='index4.html';">
+                </div>
+                <i id="right2" class="fa-solid fa-angle-right"></i>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
