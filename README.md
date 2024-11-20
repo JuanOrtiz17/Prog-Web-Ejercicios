@@ -17,4 +17,5 @@
 12. [14: Manipulacion_de_estilos](02-Manipulación-js/index.html)
 13. [15: Lista_de_tareas](04-Lista-de-tareas-js/index.html)
 14. [16: Tarjetas_gatos](05-Tarjetas-gatos/index.html)
-15. [167 Sitio](sitio/index.html)
+15. [17: Modulos](06-modules-js/index.html)
+16. [18 Sitio](sitio/index.html)
