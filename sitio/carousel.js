@@ -7,7 +7,6 @@
         });
 
         function showVideo() {
-            // Ocultar la imagen
             image.style.opacity = '0'; 
             video.style.display = 'block';
             setTimeout(function() {

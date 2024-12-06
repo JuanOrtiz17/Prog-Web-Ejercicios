@@ -16,6 +16,5 @@ function setupCarousel(wrapperId, leftId, rightId) {
     });
 }
 
-// Configura cada carrusel
 setupCarousel("carousel1", "left1", "right1");
 setupCarousel("carousel2", "left2", "right2");
