@@ -1,0 +1,70 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Ejercicio",
+            "request": "launch",
+            "mainClass": "Ejercicio",
+            "projectName": "Repositorio-Juan_42965ac5"
+        },
+        {
+            "type": "java",
+            "name": "SQLAnalyzer",
+            "request": "launch",
+            "mainClass": "SQLAnalyzer",
+            "projectName": "Repositorio-Juan_42965ac5"
+        },
+        {
+            "type": "java",
+            "name": "main",
+            "request": "launch",
+            "mainClass": "sistemas.src.main",
+            "projectName": "Repositorio-Juan_42965ac5"
+        },
+        {
+            "type": "java",
+            "name": "TablaSintactica",
+            "request": "launch",
+            "mainClass": "PR_04.TablaSintactica",
+            "projectName": "Repositorio-Juan_42965ac5"
+        },
+        {
+            "type": "java",
+            "name": "Current File",
+            "request": "launch",
+            "mainClass": "${file}"
+        },
+        {
+            "type": "java",
+            "name": "App",
+            "request": "launch",
+            "mainClass": "App",
+            "projectName": "Repositorio-Juan_42965ac5"
+        },
+        {
+            "type": "java",
+            "name": "Main",
+            "request": "launch",
+            "mainClass": "Main",
+            "projectName": "Repositorio-Juan_42965ac5"
+        },
+        {
+            "type": "java",
+            "name": "NotepadView",
+            "request": "launch",
+            "mainClass": "NotepadView",
+            "projectName": "Repositorio-Juan_42965ac5"
+        },
+        {
+            "type": "java",
+            "name": "SyntacticTableManager",
+            "request": "launch",
+            "mainClass": "PR_04.SyntacticTableManager",
+            "projectName": "Repositorio-Juan_42965ac5"
+        }
+    ]
+}

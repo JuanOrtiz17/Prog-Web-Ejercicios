@@ -1,476 +1,953 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Manga Plus</title>
+<div class="col-12 col-md-8">
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    
-    <link rel="stylesheet" href="css/style.css">
-</head>
-<body style="background-image: url('img/gris6.jpg');">
 
-<?php include_once 'layouts/header.php';?>
+    <?php if ($id == "1") { ?>
+        <h5 class="card-title">Congreso del estado</h5>
+        <img src="/anuies/v3/congresos/aguascalientes.png" class="rounded mx-auto d-block img-fluid"><!-- comment -->
+        <br>
+        <h5 class="card-title">Representaci&oacute;n</h5>
 
-    <nav class="menu-secundario">
-        <ul>
-            <li><a href="#" onclick="location.href='index3Ver.html';">Anime</a></li>
-            <li><a href="#">Destacados</a></li>
-            <li><a href="#">Favoritos</a></li>
-            <li><a href="#">Géneros</a></li>
-            <li><a href="#">Demografía</a></li>
-            <li><a href="#">Rating</a></li>
-            <li><a href="#">Noticias</a></li>
-            <li><a href="#">Foro</a></li>
-        </ul>
-    </nav>
 
-     <main>
+        <span class="badge rounded-pill" style="background-color:#06338E">13</span> PAN
+        <span class="badge rounded-pill" style="background-color:#FCD90B">4</span> PRD
+        <span class="badge rounded-pill" style="background-color:#009150">1</span> PRI
+        <BR>
+        <span class="badge rounded-pill" style="background-color:#AF272F">7</span> Morena
+        <span class="badge rounded-pill" style="background-color:#32CD32">1</span> PVEM
+        <span class="badge rounded-pill" style="background-color:#FFA500">1</span> MC
+        <span class="badge rounded-pill" style="background-color:#FFA500">1</span> MC
 
-        <div class="contenedor" >
-            <div class="caja" onclick="location.href='index2.html';">
-                <div class="grid-interno">
-                    <div class="info1">
-                        <h4>One Piece</h4>
-                        <p>Esta es la gran Era Pirata. Gold Roger, el legendario “Rey de los piratas” ha dejado el “One Piece” su legendario Tesoro....</p>
-                        <p>Capítulo 1129 - Vol 112</p>
-                        <p class="tipo-manga">Acción - Comedia - Shounen</p>
-                    </div>
-                    <div class="info2">
-                        <img src="img/One piece.jpg" alt="One Piece" class="imagen-manga">
-                    </div>
-                </div>
-            </div>
 
-            <div class="caja" onclick="location.href='index2.html';">
-                <div class="grid-interno"> 
-                    <div class="info1">
-                        <h4>Blue Lock</h4>
-                        <p>Yoichi Isagi es uno de los 300 delanteros sub-18 elegidos para guiar a japón a ganar la copa del mundo...</p>
-                        <p>Capítulo 278 - Vol 32</p>
-                        <p class="tipo-manga">Acción - Deportes - Shounen</p>
-                    </div>
-                    <div class="info2">
-                        <img src="img/Blue lock.jpg" alt="Blue lock" class="imagen-manga">
-                    </div>
-                </div>
-            </div>
-            
-            <div class="caja">
-                <div class="grid-interno" onclick="location.href='index2.html';">
-                    <div class="info1">
-                        <h4>Land Of The Lustrous</h4>
-                        <p>Hace muchas lunas, la Tierra fue golpeada por seis meteoritos que provocaron la creación de seis lunas y sólo quedó una isla....</p>
-                        <p>Capítulo 108 - Vol 12</p>
-                        <p class="tipo-manga">Psicológico - Misterio - Seinen</p>
-                    </div>
-                    <div class="info2">
-                        <img src="img/Houseki.jpg" alt="Houseki" class="imagen-manga">
-                    </div>
-                </div>
-            </div>
-        </div>
+    <?php } ?>
+    <?php if ($id == "2") { ?>
+        <h5 class="card-title">Congreso del estado</h5>
+        <img src="/anuies/v3/congresos/bc.png" class="rounded mx-auto d-block img-fluid"><!-- comment -->
+        <br>
+        <h5 class="card-title">Representaci&oacute;n</h5>
 
-        <div class="contenedor2">
-            <div class="caja2">
-                <img src="img/Fate.jpg" class="imagen-manga2">
-                <p>Fate/Stay Night</p>
-            </div>
-            <div class="caja2">
-                <img src="img/Fumetsu.jpg" class="imagen-manga2">
-                <p>To Your Eternity</p>
-            </div>
-            <div class="caja2">
-                <img src="img/Kagurabachi.jpg" class="imagen-manga2">
-                <p>Kagurabachi</p>
-            </div>
 
-            <div class="caja2">
-                <img src="img/Haikyuu.jpg" class="imagen-manga2">
-                <p>Haikyuu</p>
-            </div>
+        <span class="badge rounded-pill" style="background-color:#AF272F">15</span> Morena
+        <span class="badge rounded-pill" style="background-color:#0000FF">3</span> PAN
+        <span class="badge rounded-pill" style="background-color:#32CD32">2</span> PVEM
+        <span class="badge rounded-pill" style="background-color:#FF0000">1</span> PT
+        <BR>
+        <span class="badge rounded-pill" style="background-color:#9400D3">1</span> PESBC
+        <span class="badge rounded-pill" style="background-color:#FF69B4">1</span> FxMBC
+        <span class="badge rounded-pill" style="background-color:#FFA500">1</span> MC
+        <span class="badge rounded-pill" style="background-color:#008000">1</span> PRI
 
-            <div class="caja2">
-                <img src="img/Blue period.jpg" class="imagen-manga2">
-                <p>Blue Period</p>
-            </div>
 
-            <div class="caja2">
-                <img src="img/ruri.jpg" class="imagen-manga2">
-                <p>Ruri Dragon</p>
-            </div>
 
-            <div class="caja2">
-                <img src="img/Gintama.jpg" class="imagen-manga2">
-                <p>Gintama</p>
-            </div>
-        </div>
 
-        <div class="container-text-center-uma">
-            <div class="row-uma row-cols-3-uma">
-              <div class="col1-uma">
-                <img src="img/umamusume2.png" alt="Umamusume" class="imagen-manga-uma">
-              </div>
-    
-              <div class="col2-uma">
-                <h2>Umamusume: Pretty Derby Beginning of a New Era nos muestra sus primeros 7 minutos</h2>
-                <div class="content-row-uma">
-                    <p>Jungle Pocket, también conocida como Pokke, es una chica de Umamusume que ha estado
-                        corriendo con libertad en carreras de estilo libre, con el objetivo de participar 
-                        en la Carrera Clásica de la Triple Corona, carrera donde compiten los mejores y 
-                        solo se puede participar una vez en la vida. 
-                        <button class="uma-button2">Ver más</i></button>
-                    </p> 
-                    <img src="img/uma.jpg" alt="Umamusume" class="imagen-manga-uma2">                 
-                </div>
-                
-            </div>
-    
-              <div class="col3-uma">
-                <img src="img/derby.jpg" alt="Umamusume" class="imagen-manga-derby">
-                <button class="uma-button3">Acción</i></button>
-                <button class="uma-button3">Deporte</i></button>
-                <button class="uma-button3">Drama</i></button>
-                <button class="uma-button3">Shounen</i></button>
+    <?php } ?>
 
-                <p>Dirección: Ken Yamamoto</p>
-                <p>Guión: Kiyoko Yoshimura</p>
-                <p>Reparto principal:</p>
-                <p>Yuri Fujimoto - Sumire Uesaka - Yui Ogura</p>
-              </div>
-    
-            </div>
-          </div> 
 
-            <div class="contenedor-mas" >
-                <div class="caja-mas" onclick="location.href='index2.html';">
-                    <div class="grid-interno-mas">
-                        <div class="info1-mas">           
-                            <img src="img/Shounen no Abyss.jpg" alt="Shounen no Abyss" class="imagen-manga-mas">
-                        </div>
-                        <div class="info2-mas">
-                        <h4>Shounen no Abyss</h4>
+    <?php if ($id == "3") { ?>
+        <h5 class="card-title">Congreso del estado</h5>
+        <img src="/anuies/v3/congresos/bcs.png" class="rounded mx-auto d-block img-fluid"><!-- comment -->
+        <br>
+        <h5 class="card-title">Representaci&oacute;n</h5>
 
-                        <button class="mas-button">
-                            <span class="capitulo">Capítulo 183 ESP</span>
-                            <span class="mas">Hace 15 min</span>
-                        </button>
 
-                        <button class="mas-button">
-                            <span class="capitulo">Capítulo 183 ESP</span>
-                            <span class="mas">Hace 15 min</span>
-                        </button>
 
-                        <button class="mas-button">
-                            <span class="capitulo">Capítulo 183 ESP</span>
-                            <span class="mas">Hace 15 min</span>
-                        </button>
 
-                        </div>
-                    </div>
-                </div>
+        <span class="badge rounded-pill" style="background-color:#AF272F">15</span> Morena
+        <span class="badge rounded-pill" style="background-color:#0000FF">3</span> PAN
+        <span class="badge rounded-pill" style="background-color:#32CD32">2</span> PVEM
+        <span class="badge rounded-pill" style="background-color:#FF0000">1</span> PT
+        <span class="badge rounded-pill" style="background-color:#46D2CD">2</span> PNABCS
+        <span class="badge rounded-pill" style="background-color:#800080">1</span> PESBC
+        <br>
+        <span class="badge rounded-pill" style="background-color:#FF69B4">1</span> FxMBC
+        <span class="badge rounded-pill" style="background-color:#FFA500">1</span> MC
+        <span class="badge rounded-pill" style="background-color:#008000">1</span> PRI
 
-                <div class="caja-mas" onclick="location.href='index2.html';">
-                    <div class="grid-interno-mas"> 
-                        <div class="info1-mas">
-                            <img src="img/Type.jpg" alt="Fate/type" class="imagen-manga-mas">
-                        </div>
-                        <div class="info2-mas">
-                            <h4>Fate/type redline</h4>
 
-                            <button class="mas-button">
-                                <span class="capitulo">Capítulo 183 ESP</span>
-                                <span class="mas">Hace 15 min</span>
-                            </button>
 
-                            <button class="mas-button">
-                                <span class="capitulo">Capítulo 183 ESP</span>
-                                <span class="mas">Hace 15 min</span>
-                            </button>
 
-                            <button class="mas-button">
-                                <span class="capitulo">Capítulo 183 ESP</span>
-                                <span class="mas">Hace 15 min</span>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="caja-mas">
-                    <div class="grid-interno-mas" onclick="location.href='index2.html';">
-                        <div class="info1-mas">                   
-                            <img src="img/GTO.jpg" alt="GTO" class="imagen-manga-mas">
-                        </div>
-                        <div class="info2-mas">
-                            <h4>GTO: Great Teacher Onizuka</h4>
+    <?php } ?>
 
-                            <button class="mas-button">
-                            <span class="capitulo">Capítulo 183 ESP</span>
-                            <span class="mas">Hace 15 min</span>
-                        </button>
 
-                        <button class="mas-button">
-                            <span class="capitulo">Capítulo 183 ESP</span>
-                            <span class="mas">Hace 15 min</span>
-                        </button>
+    <?php if ($id == "4") { ?>
+        <h5 class="card-title">Congreso del estado</h5>
+        <img src="/anuies/v3/congresos/campeche.png" class="rounded mx-auto d-block img-fluid"><!-- comment -->
+        <br>
+        <h5 class="card-title">Representaci&oacute;n</h5>
 
-                        <button class="mas-button">
-                            <span class="capitulo">Capítulo 183 ESP</span>
-                            <span class="mas">Hace 15 min</span>
-                        </button>
 
-                        </div>
-                    </div>
-                </div>
-            </div>
 
-            <div class="contenedor-mas2" >
-                <div class="caja-mas" onclick="location.href='index2.html';">
-                    <div class="grid-interno-mas">
-                        <div class="info1-mas">           
-                            <img src="img/Akira.jpg" alt="Akira" class="imagen-manga-mas">
-                        </div>
-                        <div class="info2-mas">
-                        <h4>Akira</h4>
 
-                        <button class="mas-button">
-                            <span class="capitulo">Capítulo 183 ESP</span>
-                            <span class="mas">Hace 15 min</span>
-                        </button>
+        <span class="badge rounded-pill" style="background-color:#AF272F">16</span> Morena
+        <span class="badge rounded-pill" style="background-color:#50B747">2</span> PVEM
+        <span class="badge rounded-pill" style="background-color:#DA251C">2</span> PT
+        <br>
+        <span class="badge rounded-pill" style="background-color:#F28C00">10</span> MC
+        <span class="badge rounded-pill" style="background-color:#009150">3</span> PRI
+        <span class="badge rounded-pill" style="background-color:#06338ES">2</span> PAN
 
-                        <button class="mas-button">
-                            <span class="capitulo">Capítulo 183 ESP</span>
-                            <span class="mas">Hace 15 min</span>
-                        </button>
 
-                        <button class="mas-button">
-                            <span class="capitulo">Capítulo 183 ESP</span>
-                            <span class="mas">Hace 15 min</span>
-                        </button>
+    <?php } ?>
 
-                        </div>
-                    </div>
-                </div>
 
-                <div class="caja-mas" onclick="location.href='index2.html';">
-                    <div class="grid-interno-mas"> 
-                        <div class="info1-mas">
-                            <img src="img/vinland.jpg" alt="vinland" class="imagen-manga-mas">
-                        </div>
-                        <div class="info2-mas">
-                            <h4>Vinland saga</h4>
+    <?php if ($id == "5") { ?>
+        <h5 class="card-title">Congreso del estado</h5>
+        <img src="/anuies/v3/congresos/chiapas.png" class="rounded mx-auto d-block img-fluid"><!-- comment -->
+        <br>
+        <h5 class="card-title">Representaci&oacute;n</h5>
 
-                            <button class="mas-button">
-                                <span class="capitulo">Capítulo 183 ESP</span>
-                                <span class="mas">Hace 15 min</span>
-                            </button>
 
-                            <button class="mas-button">
-                                <span class="capitulo">Capítulo 183 ESP</span>
-                                <span class="mas">Hace 15 min</span>
-                            </button>
 
-                            <button class="mas-button">
-                                <span class="capitulo">Capítulo 183 ESP</span>
-                                <span class="mas">Hace 15 min</span>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="caja-mas">
-                    <div class="grid-interno-mas" onclick="location.href='index2.html';">
-                        <div class="info1-mas">                   
-                            <img src="img/hunterr.jpg" alt="Hunter" class="imagen-manga-mas">
-                        </div>
-                        <div class="info2-mas">
-                            <h4>Hunter x Hunter</h4>
-                            
-                            <button class="mas-button">
-                            <span class="capitulo">Capítulo 183 ESP</span>
-                            <span class="mas">Hace 15 min</span>
-                        </button>
 
-                        <button class="mas-button">
-                            <span class="capitulo">Capítulo 183 ESP</span>
-                            <span class="mas">Hace 15 min</span>
-                        </button>
+        <span class="badge rounded-pill" style="background-color:#AF272F">12</span> Morena
+        <span class="badge rounded-pill" style="background-color:#50B747">9</span> PVEM
+        <span class="badge rounded-pill" style="background-color:#DA251C">6</span> PT
+        <span class="badge rounded-pill" style="background-color:#008080">2</span> PCU
+        <span class="badge rounded-pill" style="background-color:#763A92">2</span> PMC
+        <span class="badge rounded-pill" style="background-color:#632D79">1</span> PES
+        <span class="badge rounded-pill" style="background-color:#CE5C5C">2</span> RSP
+        <span class="badge rounded-pill" style="background-color:#009150">2</span> PRI
+        <span class="badge rounded-pill" style="background-color:#06338E">2</span> PAN
+        <span class="badge rounded-pill" style="background-color:#F28C00">2</span> MC
 
-                        <button class="mas-button">
-                            <span class="capitulo">Capítulo 183 ESP</span>
-                            <span class="mas">Hace 15 min</span>
-                        </button>
 
-                        </div>
-                    </div>
-                </div>
-            </div>
 
-            <div class="contenedor-mas2" >
-                <div class="caja-mas" onclick="location.href='index2.html';">
-                    <div class="grid-interno-mas">
-                        <div class="info1-mas">           
-                            <img src="img/bocchi.jpg" alt="Bocchi" class="imagen-manga-mas">
-                        </div>
-                        <div class="info2-mas">
-                        <h4>Bocchi the rock</h4>
 
-                        <button class="mas-button">
-                            <span class="capitulo">Capítulo 183 ESP</span>
-                            <span class="mas">Hace 15 min</span>
-                        </button>
 
-                        <button class="mas-button">
-                            <span class="capitulo">Capítulo 183 ESP</span>
-                            <span class="mas">Hace 15 min</span>
-                        </button>
 
-                        <button class="mas-button">
-                            <span class="capitulo">Capítulo 183 ESP</span>
-                            <span class="mas">Hace 15 min</span>
-                        </button>
 
-                        </div>
-                    </div>
-                </div>
 
-                <div class="caja-mas" onclick="location.href='index2.html';">
-                    <div class="grid-interno-mas"> 
-                        <div class="info1-mas">
-                            <img src="img/dandadan.jpg" alt="Dan da dan" class="imagen-manga-mas">
-                        </div>
-                        <div class="info2-mas">
-                            <h4>Dan da dan</h4>
+    <?php } ?>
+    <?php if ($id == "6") { ?>
+        <h5 class="card-title">Congreso del estado</h5>
+        <img src="/anuies/v3/congresos/chihuahua.png" class="rounded mx-auto d-block img-fluid"><!-- comment -->
+        <br>
+        <h5 class="card-title">Representaci&oacute;n</h5>
 
-                            <button class="mas-button">
-                                <span class="capitulo">Capítulo 183 ESP</span>
-                                <span class="mas">Hace 15 min</span>
-                            </button>
 
-                            <button class="mas-button">
-                                <span class="capitulo">Capítulo 183 ESP</span>
-                                <span class="mas">Hace 15 min</span>
-                            </button>
 
-                            <button class="mas-button">
-                                <span class="capitulo">Capítulo 183 ESP</span>
-                                <span class="mas">Hace 15 min</span>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="caja-mas">
-                    <div class="grid-interno-mas" onclick="location.href='index2.html';">
-                        <div class="info1-mas">                   
-                            <img src="img/frieren.jpg" alt="Frieren" class="imagen-manga-mas">
-                        </div>
-                        <div class="info2-mas">
-                            <h4>Frieren</h4>
-                            
-                            <button class="mas-button">
-                            <span class="capitulo">Capítulo 183 ESP</span>
-                            <span class="mas">Hace 15 min</span>
-                        </button>
 
-                        <button class="mas-button">
-                            <span class="capitulo">Capítulo 183 ESP</span>
-                            <span class="mas">Hace 15 min</span>
-                        </button>
+        <span class="badge rounded-pill" style="background-color:#06338E">12</span> PAN
+        <span class="badge rounded-pill" style="background-color:#009150">4</span> PRI
+        <BR>
+        <span class="badge rounded-pill" style="background-color:#AF272F">12</span> Morena
+        <span class="badge rounded-pill" style="background-color:#DA251C">2</span> PT
+        <span class="badge rounded-pill" style="background-color:#F28C00">2</span> MC
+        <span class="badge rounded-pill" style="background-color:#50B747">1</span> PVEM
 
-                        <button class="mas-button">
-                            <span class="capitulo">Capítulo 183 ESP</span>
-                            <span class="mas">Hace 15 min</span>
-                        </button>
 
-                        </div>
-                    </div>
-                </div>
-            </div>
 
-            <div class="contenedor-mas2" >
-                <div class="caja-mas" onclick="location.href='index2.html';">
-                    <div class="grid-interno-mas">
-                        <div class="info1-mas">           
-                            <img src="img/Pandora.jpg" alt="Pandora hearts" class="imagen-manga-mas">
-                        </div>
-                        <div class="info2-mas">
-                        <h4>Pandora hearts</h4>
 
-                        <button class="mas-button">
-                            <span class="capitulo">Capítulo 183 ESP</span>
-                            <span class="mas">Hace 15 min</span>
-                        </button>
 
-                        <button class="mas-button">
-                            <span class="capitulo">Capítulo 183 ESP</span>
-                            <span class="mas">Hace 15 min</span>
-                        </button>
 
-                        <button class="mas-button">
-                            <span class="capitulo">Capítulo 183 ESP</span>
-                            <span class="mas">Hace 15 min</span>
-                        </button>
 
-                        </div>
-                    </div>
-                </div>
 
-                <div class="caja-mas" onclick="location.href='index2.html';">
-                    <div class="grid-interno-mas"> 
-                        <div class="info1-mas">
-                            <img src="img/Bibliomania.jpg" alt="Bibliomania" class="imagen-manga-mas">
-                        </div>
-                        <div class="info2-mas">
-                            <h4>Bibliomania</h4>
+    <?php } ?>
+    <?php if ($id == "7") { ?>
+        <h5 class="card-title">Congreso del estado</h5>
+        <img src="/anuies/v3/congresos/ciudad_mexico.png" class="rounded mx-auto d-block img-fluid"><!-- comment -->
+        <br>
+        <h5 class="card-title">Representaci&oacute;n</h5>
 
-                            <button class="mas-button">
-                                <span class="capitulo">Capítulo 183 ESP</span>
-                                <span class="mas">Hace 15 min</span>
-                            </button>
 
-                            <button class="mas-button">
-                                <span class="capitulo">Capítulo 183 ESP</span>
-                                <span class="mas">Hace 15 min</span>
-                            </button>
 
-                            <button class="mas-button">
-                                <span class="capitulo">Capítulo 183 ESP</span>
-                                <span class="mas">Hace 15 min</span>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="caja-mas">
-                    <div class="grid-interno-mas" onclick="location.href='index2.html';">
-                        <div class="info1-mas">                   
-                            <img src="img/tatami.jpg" alt="tatami" class="imagen-manga-mas">
-                        </div>
-                        <div class="info2-mas">
-                            <h4>The tatami galaxy</h4>
-                            
-                            <button class="mas-button">
-                            <span class="capitulo">Capítulo 183 ESP</span>
-                            <span class="mas">Hace 15 min</span>
-                        </button>
 
-                        <button class="mas-button">
-                            <span class="capitulo">Capítulo 183 ESP</span>
-                            <span class="mas">Hace 15 min</span>
-                        </button>
+        <span class="badge rounded-pill" style="background-color:#AF272F">24</span> Morena
+        <span class="badge rounded-pill" style="background-color:#228B22">10</span> PVEM
+        <span class="badge rounded-pill" style="background-color:#FF0000">4</span> PT
+        <span class="badge rounded-pill" style="background-color:#C1C1C1">6</span> AP
+        <span class="badge rounded-pill" style="background-color:#FCD90B">2</span> PRD
+        <BR>
+        <span class="badge rounded-pill" style="background-color:#06338E">15</span> PAN
+        <span class="badge rounded-pill" style="background-color:#FF8C00">3</span> MC
+        <span class="badge rounded-pill" style="background-color:#32CD32">2</span> PRI
 
-                        <button class="mas-button">
-                            <span class="capitulo">Capítulo 183 ESP</span>
-                            <span class="mas">Hace 15 min</span>
-                        </button>
 
-                        </div>
-                    </div>
-                </div>
-            </div>
 
-            <?php include 'layouts/footer.php'; ?>
-</body>
-</html>
+
+
+
+
+
+
+
+
+
+    <?php } ?>
+    <?php if ($id == "8") { ?>
+        <h5 class="card-title">Congreso del estado</h5>
+        <img src="/anuies/v3/congresos/coahuila.png" class="rounded mx-auto d-block img-fluid"><!-- comment -->
+        <br>
+        <h5 class="card-title">Representaci&oacute;n</h5>
+
+
+
+
+        <span class="badge rounded-pill" style="background-color:#009150">10</span> PRI
+        <span class="badge rounded-pill" style="background-color:#AF272F">5</span> Morena
+        <span class="badge rounded-pill" style="background-color:#06338E">5</span> PAN
+        <span class="badge rounded-pill" style="background-color:#FCD90B">2</span> PRD
+        <br>
+        <span class="badge rounded-pill" style="background-color:#04B404">1</span> PVEM
+        <span class="badge rounded-pill" style="background-color:#FF7430">1</span> UDC
+        <span class="badge rounded-pill" style="background-color:#FF0000">1</span> PT
+
+
+    <?php } ?>
+
+
+    <?php if ($id == "9") { ?>
+        <h5 class="card-title">Congreso del estado</h5>
+        <img src="/anuies/v3/congresos/colima.png" class="rounded mx-auto d-block img-fluid"><!-- comment -->
+        <br>
+        <h5 class="card-title">Representaci&oacute;n</h5>
+
+
+
+
+        <span class="badge rounded-pill" style="background-color:#AF272F">11</span> Morena
+        <span class="badge rounded-pill" style="background-color:#48D1CC">1</span> NAC
+
+
+        <span class="badge rounded-pill" style="background-color:#50B747">3</span> PVEM
+        <span class="badge rounded-pill" style="background-color:#DA251C">3</span> PT
+        <br>
+        <span class="badge rounded-pill" style="background-color:#06338E">3</span> PAN
+        <span class="badge rounded-pill" style="background-color:#009150">3</span> PRI
+        <span class="badge rounded-pill" style="background-color:#F28C00">1</span> MC
+
+
+    <?php } ?>
+
+
+    <?php if ($id == "10") { ?>
+        <h5 class="card-title">Congreso del estado</h5>
+        <img src="/anuies/v3/congresos/durango.png" class="rounded mx-auto d-block img-fluid"><!-- comment -->
+        <br>
+        <h5 class="card-title">Representaci&oacute;n</h5>
+
+
+
+
+        <span class="badge rounded-pill" style="background-color:#009150">7</span> PRI
+        <span class="badge rounded-pill" style="background-color:#06338E">5</span> PAN
+        <br>
+        <span class="badge rounded-pill" style="background-color:#AF272F">9</span> Morena
+        <span class="badge rounded-pill" style="background-color:#50B747">3</span> PVEM
+        <span class="badge rounded-pill" style="background-color:#F28C00">1</span> MC
+
+
+    <?php } ?>
+    <?php if ($id == "11") { ?>
+        <h5 class="card-title">Congreso del estado</h5>
+        <img src="/anuies/v3/congresos/guanajuato.svg" class="rounded mx-auto d-block img-fluid"><!-- comment -->
+        <br>
+        <h5 class="card-title">Representaci&oacute;n</h5>
+
+
+
+
+        <span class="badge rounded-pill" style="background-color:#06338E">17</span> PAN
+        <span class="badge rounded-pill" style="background-color:#AF272F">10</span> Morena
+        <span class="badge rounded-pill" style="background-color:#009150">2</span> PRI
+        <span class="badge rounded-pill" style="background-color:#50B747">2</span> PVEM
+        <span class="badge rounded-pill" style="background-color:#DA251C">2</span> PT
+        <span class="badge rounded-pill" style="background-color:#F28C00">2</span> MC
+        <span class="badge rounded-pill" style="background-color:#FCD90B">1</span> PRD
+
+
+
+
+    <?php } ?>
+    <?php if ($id == "12") { ?>
+        <h5 class="card-title">Congreso del estado</h5>
+        <img src="/anuies/v3/congresos/guerrero.png" class="rounded mx-auto d-block img-fluid"><!-- comment -->
+        <br>
+        <h5 class="card-title">Representaci&oacute;n</h5>
+
+
+
+
+        <span class="badge rounded-pill" style="background-color:#AF272F">22</span> Morena
+        <span class="badge rounded-pill" style="background-color:#50B747">6</span> PVEM
+        <span class="badge rounded-pill" style="background-color:#DA251C">5</span> PT
+        <BR>
+        <span class="badge rounded-pill" style="background-color:#009150">6</span> PRI
+        <span class="badge rounded-pill" style="background-color:#FCD90B">4</span> PRD
+        <span class="badge rounded-pill" style="background-color:#F28C00">2</span> MC
+        <span class="badge rounded-pill" style="background-color:#06338E">1</span> PAN
+
+
+
+
+
+
+    <?php } ?>
+    <?php if ($id == "13") { ?>
+        <h5 class="card-title">Congreso del estado</h5>
+        <img src="/anuies/v3/congresos/hidalgo.png" class="rounded mx-auto d-block img-fluid"><!-- comment -->
+        <br>
+        <h5 class="card-title">Representaci&oacute;n</h5>
+
+
+
+
+        <span class="badge rounded-pill" style="background-color:#AF272F">14</span> Morena
+        <span class="badge rounded-pill" style="background-color:#48D1CC">6</span> NAH
+        <span class="badge rounded-pill" style="background-color:#DA251C">3</span> PT
+        <span class="badge rounded-pill" style="background-color:#50B747">2</span> PVEM
+        <BR>
+        <span class="badge rounded-pill" style="background-color:#009150">2</span> PRI
+        <span class="badge rounded-pill" style="background-color:#F28C00">2</span> MC
+        <span class="badge rounded-pill" style="background-color:#06338E">1</span> PAN
+
+
+
+
+
+
+    <?php } ?>
+    <?php if ($id == "14") { ?>
+        <h5 class="card-title">Congreso del estado</h5>
+        <img src="/anuies/v3/congresos/jalisco.png" class="rounded mx-auto d-block img-fluid"><!-- comment -->
+        <br>
+        <h5 class="card-title">Representaci&oacute;n</h5>
+
+
+
+
+        <span class="badge rounded-pill" style="background-color:#F28C00">11</span> MC
+        <BR>
+        <span class="badge rounded-pill" style="background-color:#AF272F">9</span> Morena
+        <span class="badge rounded-pill" style="background-color:#06338E">5</span> PAN
+        <span class="badge rounded-pill" style="background-color:#009150">3</span> PRI
+        <span class="badge rounded-pill" style="background-color:#8A2E91">3</span> Hagamos
+        <span class="badge rounded-pill" style="background-color:#04B404">2</span> PVEM
+        <span class="badge rounded-pill" style="background-color:#FF555C">2</span> Futuro
+        <span class="badge rounded-pill" style="background-color:#FF0000">2</span> PT
+        <span class="badge rounded-pill" style="background-color:#C0C0C0">1</span> SP
+
+
+
+
+
+
+    <?php } ?>
+
+
+    <?php if ($id == "15") { ?>
+        <h5 class="card-title">Congreso del estado</h5>
+        <img src="/anuies/v3/congresos/mexico.png" class="rounded mx-auto d-block img-fluid"><!-- comment -->
+        <br>
+        <h5 class="card-title">Representaci&oacute;n</h5>
+
+
+
+
+
+
+
+
+        <span class="badge rounded-pill" style="background-color:#AF272F">39</span> Morena
+        <span class="badge rounded-pill" style="background-color:#DA251C">6</span> PT
+        <span class="badge rounded-pill" style="background-color:#50B747">8</span> PVEM
+        <BR>
+        <span class="badge rounded-pill" style="background-color:#06338E">9</span> PRI
+        <span class="badge rounded-pill" style="background-color:#06338E">7</span> PAN
+        <span class="badge rounded-pill" style="background-color:#FCD90B">2</span> PRD
+        <span class="badge rounded-pill" style="background-color:#F28C00">4</span> MC
+
+
+
+
+
+
+
+
+    <?php } ?>
+
+
+    <?php if ($id == "16") { ?>
+        <h5 class="card-title">Congreso del estado</h5>
+        <img src="/anuies/v3/congresos/michoacan.png" class="rounded mx-auto d-block img-fluid"><!-- comment -->
+        <br>
+        <h5 class="card-title">Representaci&oacute;n</h5>
+
+
+
+
+
+
+
+
+        <span class="badge rounded-pill" style="background-color:#808080">2</span> Independientes
+        <span class="badge rounded-pill" style="background-color:#AF272F">14</span> Morena
+        <span class="badge rounded-pill" style="background-color:#DA251C">6</span> PT
+        <span class="badge rounded-pill" style="background-color:#50B747">8</span> PVEM
+        <BR>
+
+
+        <span class="badge rounded-pill" style="background-color:#06338E">4</span> PAN
+        <span class="badge rounded-pill" style="background-color:#009150">2</span> PRI
+        <span class="badge rounded-pill" style="background-color:#FCD90B">2</span> PRD
+        <span class="badge rounded-pill" style="background-color:#F28C00">2</span> MC
+
+
+
+
+
+
+
+
+    <?php } ?>
+    <?php if ($id == "17") { ?>
+        <h5 class="card-title">Congreso del estado</h5>
+        <img src="/anuies/v3/congresos/morelos.png" class="rounded mx-auto d-block img-fluid"><!-- comment -->
+        <br>
+        <h5 class="card-title">Representaci&oacute;n</h5>
+
+
+
+
+
+
+        <span class="badge rounded-pill" style="background-color:#AD1800">10</span> Morena
+        <span class="badge rounded-pill" style="background-color:#FF0000">2</span> PT
+        <span class="badge rounded-pill" style="background-color:#50B747">1</span> PVEM
+        <BR>
+        <span class="badge rounded-pill" style="background-color:#05338D">4</span> PAN
+        <span class="badge rounded-pill" style="background-color:#009150">1</span> PRI
+        <span class="badge rounded-pill" style="background-color:#FF8C00">1</span> MC
+        <span class="badge rounded-pill" style="background-color:#48D1CC">1</span> NA
+
+
+
+
+
+
+
+
+
+
+    <?php } ?>
+
+
+    <?php if ($id == "18") { ?>
+        <h5 class="card-title">Congreso del estado</h5>
+        <img src="/anuies/v3/congresos/nayarit.svg" class="rounded mx-auto d-block img-fluid"><!-- comment -->
+        <br>
+        <h5 class="card-title">Representaci&oacute;n</h5>
+
+
+
+
+
+
+        <span class="badge rounded-pill" style="background-color:#B5261E">13</span> Morena
+        <span class="badge rounded-pill" style="background-color:#50B747">3</span> PVEM
+        <span class="badge rounded-pill" style="background-color:#DA251C">3</span> PT
+        <span class="badge rounded-pill" style="background-color:#F28C00">3</span> MC
+        <span class="badge rounded-pill" style="background-color:#06338E">2</span> PAN<BR>
+        <span class="badge rounded-pill" style="background-color:#EC62A0">2</span> FXMN
+        <span class="badge rounded-pill" style="background-color:#009150">1</span> PRI
+        <span class="badge rounded-pill" style="background-color:#48D1CC">1</span> NAN
+        <span class="badge rounded-pill" style="background-color:#CD5C5C">1</span> RSPN
+        <span class="badge rounded-pill" style="background-color:#E66FA7">1</span> MLN
+
+
+
+
+
+
+
+
+
+
+    <?php } ?>
+    <?php if ($id == "19") { ?>
+        <h5 class="card-title">Congreso del estado</h5>
+        <img src="/anuies/v3/congresos/nuevoleon.png" class="rounded mx-auto d-block img-fluid"><!-- comment -->
+        <br>
+        <h5 class="card-title">Representaci&oacute;n</h5>
+
+
+
+
+
+
+        <span class="badge rounded-pill" style="background-color:#F28C00">10</span> MC
+        <span class="badge rounded-pill" style="background-color:#06338E">10</span> PAN
+        <span class="badge rounded-pill" style="background-color:#AF272F">9</span> Morena
+        <span class="badge rounded-pill" style="background-color:#009150">8</span> PRI<br>
+        <span class="badge rounded-pill" style="background-color:#FCD90B">3</span> PRD
+        <span class="badge rounded-pill" style="background-color:#50B747">1</span> PVEM
+        <span class="badge rounded-pill" style="background-color:#DA251C">1</span> PT
+
+
+
+
+
+
+
+
+
+
+    <?php } ?>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <?php if ($id == "20") { ?>
+        <h5 class="card-title">Congreso del estado</h5>
+        <img src="/anuies/v3/congresos/oaxaca.png" class="rounded mx-auto d-block img-fluid"><!-- comment -->
+        <br>
+        <h5 class="card-title">Representaci&oacute;n</h5>
+
+
+
+
+
+
+        <span class="badge rounded-pill" style="background-color:#AF272F">23</span> Morena
+        <span class="badge rounded-pill" style="background-color:#009150">8</span> PRI
+        <span class="badge rounded-pill" style="background-color:#FCD90B">3</span> PRD
+        <span class="badge rounded-pill" style="background-color:#DA251C">3</span> PT<br>
+        <span class="badge rounded-pill" style="background-color:#06338E">2</span> PAN
+        <span class="badge rounded-pill" style="background-color:#50B747">1</span> PVEM
+        <span class="badge rounded-pill" style="background-color:#808000">1</span> PUP
+        <span class="badge rounded-pill" style="background-color:#48D1CC">1</span> PANAL
+
+
+
+
+
+
+
+
+
+
+    <?php } ?>
+
+
+
+
+    <?php if ($id == "21") { ?>
+        <h5 class="card-title">Congreso del estado</h5>
+        <img src="/anuies/v3/congresos/puebla.png" class="rounded mx-auto d-block img-fluid"><!-- comment -->
+        <br>
+        <h5 class="card-title">Representaci&oacute;n</h5>
+
+
+
+
+
+
+        <span class="badge rounded-pill" style="background-color:#AF272F">18</span> Morena
+        <span class="badge rounded-pill" style="background-color:#50B747">7</span> PVEM
+        <span class="badge rounded-pill" style="background-color:#DA251C">5</span> PT
+        <span class="badge rounded-pill" style="background-color:#48D1CC">2</span> NAP<br>
+        <span class="badge rounded-pill" style="background-color:#EC62A0">2</span> FXMP
+        <span class="badge rounded-pill" style="background-color:#06338E">5</span> PAN
+        <span class="badge rounded-pill" style="background-color:#009150">1</span> PRI
+        <span class="badge rounded-pill" style="background-color:#F28C00">1</span> MC
+
+
+
+
+
+
+
+
+
+
+    <?php } ?>
+
+
+
+
+    <?php if ($id == "22") { ?>
+        <h5 class="card-title">Congreso del estado</h5>
+        <img src="/anuies/v3/congresos/queretaro.png" class="rounded mx-auto d-block img-fluid"><!-- comment -->
+        <br>
+        <h5 class="card-title">Representaci&oacute;n</h5>
+
+
+
+
+
+
+        <span class="badge rounded-pill" style="background-color:#06338E">8</span> PAN
+        <span class="badge rounded-pill" style="background-color:#009150">1</span> PRI<br>
+        <span class="badge rounded-pill" style="background-color:#AF272F">9</span> Morena
+        <span class="badge rounded-pill" style="background-color:#50B747">3</span> PVEM
+        <span class="badge rounded-pill" style="background-color:#DA251C">3</span> PT
+        <span class="badge rounded-pill" style="background-color:#F28C00">1</span> MC
+
+
+
+
+
+
+
+
+
+
+    <?php } ?>
+
+
+    <?php if ($id == "23") { ?>
+        <h5 class="card-title">Congreso del estado</h5>
+        <img src="/anuies/v3/congresos/quintanaRoo.png" class="rounded mx-auto d-block img-fluid"><!-- comment -->
+        <br>
+        <h5 class="card-title">Representaci&oacute;n</h5>
+
+
+
+
+
+
+        <span class="badge rounded-pill" style="background-color:#AF272F">13</span> Morena
+        <span class="badge rounded-pill" style="background-color:#50B747">5</span> PVEM
+        <span class="badge rounded-pill" style="background-color:#DA251C">3</span> PT<br>
+        <span class="badge rounded-pill" style="background-color:#06338E">2</span> PAN
+        <span class="badge rounded-pill" style="background-color:#009150">1</span> PRI
+        <span class="badge rounded-pill" style="background-color:#F28C00">1</span> MC
+
+
+
+
+
+
+
+
+
+
+    <?php } ?>
+    <?php if ($id == "24") { ?>
+        <h5 class="card-title">Congreso del estado</h5>
+        <img src="/anuies/v3/congresos/sanLuisPotosi.png" class="rounded mx-auto d-block img-fluid"><!-- comment -->
+        <br>
+        <h5 class="card-title">Representaci&oacute;n</h5>
+
+
+
+
+
+
+        <span class="badge rounded-pill" style="background-color:#50B747">9</span> PVEM
+        <span class="badge rounded-pill" style="background-color:#AF272F">6</span> Morena
+        <span class="badge rounded-pill" style="background-color:#DA251C">4</span> PT
+        <span class="badge rounded-pill" style="background-color:#48D1CC">1</span> NASLP<br>
+        <span class="badge rounded-pill" style="background-color:#06338E">4</span> PAN
+        <span class="badge rounded-pill" style="background-color:#009150">2</span> PRI
+        <span class="badge rounded-pill" style="background-color:#F28C00">1</span> MC
+
+
+
+
+
+
+
+
+
+
+    <?php } ?>
+
+
+    <?php if ($id == "25") { ?>
+        <h5 class="card-title">Congreso del estado</h5>
+        <img src="/anuies/v3/congresos/sinaloa.png" class="rounded mx-auto d-block img-fluid"><!-- comment -->
+        <br>
+        <h5 class="card-title">Representaci&oacute;n</h5>
+
+
+
+
+
+
+        <span class="badge rounded-pill" style="background-color:#AF272F">21</span> Morena
+        <span class="badge rounded-pill" style="background-color:#50B747">6</span> PVEM
+        <span class="badge rounded-pill" style="background-color:#DA251C">1</span> PT<br>
+        <span class="badge rounded-pill" style="background-color:#06338E">4</span> PAN
+        <span class="badge rounded-pill" style="background-color:#009150">4</span> PRI
+        <span class="badge rounded-pill" style="background-color:#F28C00">2</span> MC
+        <span class="badge rounded-pill" style="background-color:#340874">2</span> PAS
+
+
+
+
+
+
+
+
+
+
+    <?php } ?>
+
+
+
+
+    <?php if ($id == "26") { ?>
+        <h5 class="card-title">Congreso del estado</h5>
+        <img src="/anuies/v3/congresos/sonora.png" class="rounded mx-auto d-block img-fluid"><!-- comment -->
+        <br>
+        <h5 class="card-title">Representaci&oacute;n</h5>
+
+
+
+
+
+
+        <span class="badge rounded-pill" style="background-color:#AF272F">10</span> Morena
+        <span class="badge rounded-pill" style="background-color:#DA251C">5</span> PT
+        <span class="badge rounded-pill" style="background-color:#50B747">4</span> PVEM
+        <span class="badge rounded-pill" style="background-color:#14B4B6">3</span> NAS
+        <span class="badge rounded-pill" style="background-color:#800080">3</span> PES<br>
+        <span class="badge rounded-pill" style="background-color:#009150">2</span> PRI
+        <span class="badge rounded-pill" style="background-color:#F28C00">2</span> MC
+        <span class="badge rounded-pill" style="background-color:#06338E">1</span> PAN
+        <span class="badge rounded-pill" style="background-color:#FCD90B">1</span> PRD
+        <span class="badge rounded-pill" style="background-color:#4C2882">1</span> PS
+        <span class="badge rounded-pill" style="background-color:#808080">1</span> SP
+
+
+
+
+
+
+
+
+
+
+
+
+    <?php } ?>
+
+
+    <?php if ($id == "27") { ?>
+        <h5 class="card-title">Congreso del estado</h5>
+        <img src="/anuies/v3/congresos/tabasco.png" class="rounded mx-auto d-block img-fluid"><!-- comment -->
+        <br>
+        <h5 class="card-title">Representaci&oacute;n</h5>
+
+
+
+
+
+
+        <span class="badge rounded-pill" style="background-color:#AF272F">21</span> Morena
+        <span class="badge rounded-pill" style="background-color:#DA251C">3</span> PT
+        <span class="badge rounded-pill" style="background-color:#50B747">3</span> PVEM<br>
+        <span class="badge rounded-pill" style="background-color:#FCD90B">4</span> PRD
+        <span class="badge rounded-pill" style="background-color:#F28C00">3</span> MC
+        <span class="badge rounded-pill" style="background-color:#009150">1</span> PRI
+
+
+
+
+
+
+
+
+
+
+    <?php } ?>
+
+
+    <?php if ($id == "28") { ?>
+        <h5 class="card-title">Congreso del estado</h5>
+        <img src="/anuies/v3/congresos/tamaulipas.png" class="rounded mx-auto d-block img-fluid"><!-- comment -->
+        <br>
+        <h5 class="card-title">Representaci&oacute;n</h5>
+
+
+
+
+
+
+        <span class="badge rounded-pill" style="background-color:#AF272F">18</span> Morena
+        <span class="badge rounded-pill" style="background-color:#50B747">4</span> PVEM
+        <span class="badge rounded-pill" style="background-color:#DA251C">4</span> PT<br>
+        <span class="badge rounded-pill" style="background-color:#06338E">7</span> PAN
+        <span class="badge rounded-pill" style="background-color:#F28C00">2</span> MC
+        <span class="badge rounded-pill" style="background-color:#009150">1</span> PRI
+
+
+
+
+
+
+
+
+
+
+    <?php } ?>
+
+
+
+
+
+
+    <?php if ($id == "29") { ?>
+        <h5 class="card-title">Congreso del estado</h5>
+        <img src="/anuies/v3/congresos/tlaxcala.png" class="rounded mx-auto d-block img-fluid"><!-- comment -->
+        <br>
+        <h5 class="card-title">Representaci&oacute;n</h5>
+
+
+
+
+
+
+        <span class="badge rounded-pill" style="background-color:#AF272F">15</span> Morena
+        <BR>
+        <span class="badge rounded-pill" style="background-color:#DA251C">2</span> PT
+        <span class="badge rounded-pill" style="background-color:#06338E">1</span> PAN
+        <span class="badge rounded-pill" style="background-color:#009150">1</span> PRI<br>
+        <span class="badge rounded-pill" style="background-color:#FCD90B">1</span> PRD
+        <span class="badge rounded-pill" style="background-color:#50B747">1</span> PVEM
+        <span class="badge rounded-pill" style="background-color:#50B747">1</span> MC
+        <span class="badge rounded-pill" style="background-color:#000080">1</span> PAC
+        <span class="badge rounded-pill" style="background-color:#48D1CC">1</span> NAT<br>
+        <span class="badge rounded-pill" style="background-color:#EC62A0">1</span> FPMT
+
+
+
+
+
+
+
+
+
+
+
+
+    <?php } ?>
+
+
+    <?php if ($id == "30") { ?>
+        <h5 class="card-title">Congreso del estado</h5>
+        <img src="/anuies/v3/congresos/veracruz.png" class="rounded mx-auto d-block img-fluid"><!-- comment -->
+        <br>
+        <h5 class="card-title">Representaci&oacute;n</h5>
+
+
+
+
+
+
+        <span class="badge rounded-pill" style="background-color:#AF272F">30</span> Morena
+
+
+        <span class="badge rounded-pill" style="background-color:#50B747">6</span> PVEM
+        <span class="badge rounded-pill" style="background-color:#DA251C">5</span> PT <BR>
+        <span class="badge rounded-pill" style="background-color:#06338E">5</span> PAN
+        <span class="badge rounded-pill" style="background-color:#009150">2</span> PRI
+        <span class="badge rounded-pill" style="background-color:#F28C00">2</span> MC
+
+
+
+
+
+
+
+
+
+
+
+
+    <?php } ?>
+
+
+
+
+    <?php if ($id == "31") { ?>
+        <h5 class="card-title">Congreso del estado</h5>
+        <img src="/anuies/v3/congresos/yucatan.png" class="rounded mx-auto d-block img-fluid"><!-- comment -->
+        <br>
+        <h5 class="card-title">Representaci&oacute;n</h5>
+
+
+
+
+
+
+        <span class="badge rounded-pill" style="background-color:#AF272F">17</span> Morena
+
+
+        <span class="badge rounded-pill" style="background-color:#06338E">12</span> PAN
+        <span class="badge rounded-pill" style="background-color:#DA251C">1</span> PT<br>
+        <span class="badge rounded-pill" style="background-color:#009150">2</span> PRI
+        <span class="badge rounded-pill" style="background-color:#50B747">1</span> PVEM
+        <span class="badge rounded-pill" style="background-color:#F28C00">2</span> MC
+
+
+
+
+
+
+
+
+
+
+
+
+    <?php } ?>
+
+
+    <?php if ($id == "32") { ?>
+        <h5 class="card-title">Congreso del estado</h5>
+        <img src="/anuies/v3/congresos/zacatecas.png" class="rounded mx-auto d-block img-fluid"><!-- comment -->
+        <br>
+        <h5 class="card-title">Representaci&oacute;n</h5>
+
+
+
+
+
+
+        <span class="badge rounded-pill" style="background-color:#AF272F">12</span> Morena
+        <span class="badge rounded-pill" style="background-color:#DA251C">3</span> PT
+        <span class="badge rounded-pill" style="background-color:#50B747">2</span> PVEM
+        <span class="badge rounded-pill" style="background-color:#00BFFF">1</span> PANALZ<br>
+        <span class="badge rounded-pill" style="background-color:#009150">5</span> PRI
+        <span class="badge rounded-pill" style="background-color:#06338E">3</span> PAN
+        <span class="badge rounded-pill" style="background-color:#FCD90B">2</span> PRD
+        <span class="badge rounded-pill" style="background-color:#F28C00">2</span> MC
+
+
+
+
+
+
+
+
+
+
+
+
+    <?php } ?>
+
+
+
+
+
+
+
+
+</div>

@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Analizador SQL Semántico</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #0e1c40;
+      color: #333;
+      padding: 20px;
+      margin: 0;
+    }
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      background: #0e1c40;
+      padding: 25px;
+      border-radius: 8px;
+      border: 2px solid #efea99;
+    }
+    h1, h2 {
+      color: #efea99;
+    }
+    .textarea {
+      width: 100%;
+      padding: 12px;
+      font-family: 'Consolas', monospace;
+      font-size: 14px;
+      border-radius: 4px;
+      border: 1px solid #ddd;
+      background: #f0f0f0;
+      margin-bottom: 15px;
+    }
+    .btn {
+      background-color: #efea99;
+      padding: 10px 20px;
+      border-radius: 4px;
+      border: none;
+      cursor: pointer;
+    }
+    .btn:hover {
+      background-color: #d1cc64;
+    }
+    .status {
+      margin-top: 10px;
+      padding: 10px;
+      border-radius: 4px;
+      font-weight: bold;
+    }
+    .status.success {
+      background-color: #d4edda;
+      color: #155724;
+    }
+    .status.error {
+      background-color: #f8d7da;
+      color: #721c24;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+    table th, table td {
+      border: 1px solid #ccc;
+      padding: 8px;
+      font-size: 14px;
+    }
+    table th {
+      background-color: #3498db;
+      color: white;
+    }
+    .error-row {
+      background-color: #ffe5e5;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Analizador SQL Semántico</h1>
+    <textarea class="textarea" id="sqlInput" rows="12" placeholder="Escribe tu sentencia SQL..."></textarea>
+    <button class="btn" onclick="analyzeSQL()">Analizar</button>
+    <div id="statusMessage" class="status"></div>
+    <h2>Estructura de Tablas Semánticas</h2>
+    <div id="semanticTables"></div>
+    <div id="results"></div>
+  </div>
+
+  <script>
+    const semanticaBD = {
+      ALUMNOS: ["A#", "ANOMBRE", "GENERACION", "SEXO", "C#"],
+      INSCRITOS: ["R#", "A#", "M#", "P#", "TURNO", "SEMESTRE", "CALIFICACION"],
+      CARRERAS: ["C#", "CNOMBRE", "VIGENCIA", "SEMESTRES", "D#"],
+      DEPARTAMENTOS: ["D#", "DNOMBRE"],
+      MATERIAS: ["M#", "MNOMBRE", "CREDITOS", "C#"],
+      PROFESORES: ["P#", "PNOMBRE", "EDAD", "SEXO", "ESP", "GRADO", "D#"]
+    };
+
+    function analyzeSQL() {
+      const input = document.getElementById("sqlInput").value;
+      const lines = input.split("\n");
+      const tokens = tokenize(lines);
+      const statusDiv = document.getElementById("statusMessage");
+      const resultDiv = document.getElementById("results");
+      statusDiv.textContent = "";
+      resultDiv.innerHTML = "";
+
+      const errorToken = tokens.find(t => t.error);
+      if (errorToken) {
+        showError(`1:${errorToken.code} Línea ${errorToken.line}. ${errorToken.message}`, 'error');
+        renderSemanticTables();
+        return;
+      }
+
+      const semResult = semanticAnalysis(tokens);
+      if (!semResult.success) {
+        showError(`3:${semResult.error.code} Línea ${semResult.error.line}. ${semResult.error.message}`, 'error');
+        renderSemanticTables();
+        return;
+      }
+
+      showError("2:200 Sin Errores", 'success');
+      renderTokens(tokens);
+      renderSemanticTables();
+    }
+
+    function showError(message, type) {
+      const statusDiv = document.getElementById("statusMessage");
+      statusDiv.className = `status ${type}`;
+      statusDiv.textContent = message;
+    }
+
+    function tokenize(lines) {
+      const tokens = [];
+      const regex = /\w+[#]?\.?\w*|'[^']*'|\(|\)|,|=|\*|;/g;
+      lines.forEach((line, index) => {
+        const match = line.match(regex);
+        if (match) {
+          match.forEach(token => {
+            if (/^'.*'$/.test(token)) tokens.push({ token, type: 'STRING', line: index + 1 });
+            else if (/^\d+$/.test(token)) tokens.push({ token, type: 'NUMBER', line: index + 1 });
+            else if (/^(SELECT|FROM|WHERE|AND|OR|IN|DISTINCT)$/i.test(token)) tokens.push({ token, type: 'KEYWORD', line: index + 1 });
+            else if (/^[=,()*]$/.test(token)) tokens.push({ token, type: 'SYMBOL', line: index + 1 });
+            else if (/^[A-Z_][A-Z0-9_#]*\.?[A-Z0-9_#]*$/i.test(token)) tokens.push({ token, type: 'IDENTIFIER', line: index + 1 });
+            else tokens.push({ token, type: 'UNKNOWN', line: index + 1, error: { code: 101, message: 'Símbolo desconocido' } });
+          });
+        }
+      });
+      return tokens;
+    }
+
+    function semanticAnalysis(tokens) {
+      const tablas = new Set();
+      const aliasMap = new Map();
+      const atributos = [];
+
+      let mode = null;
+      for (let i = 0; i < tokens.length; i++) {
+        const t = tokens[i];
+        const next = tokens[i + 1];
+
+        if (t.token.toUpperCase() === 'FROM') {
+          mode = 'FROM';
+          continue;
+        } else if (t.token.toUpperCase() === 'WHERE') {
+          mode = 'WHERE';
+          continue;
+        }
+
+        if (mode === 'FROM') {
+          if (t.type === 'IDENTIFIER') {
+            if (next && next.type === 'IDENTIFIER') {
+              tablas.add(t.token.toUpperCase());
+              aliasMap.set(next.token.toUpperCase(), t.token.toUpperCase());
+              i++;
+            } else {
+              tablas.add(t.token.toUpperCase());
+            }
+          }
+        } else if (t.type === 'IDENTIFIER') {
+          atributos.push(t);
+        }
+      }
+
+      for (const tabla of tablas) {
+        if (!(tabla in semanticaBD)) {
+          return { success: false, error: { code: 314, message: `El nombre de la tabla “${tabla}” no es válido.`, line: 2 } };
+        }
+      }
+
+      for (const t of atributos) {
+        const parts = t.token.split('.');
+        let alias = null;
+        let attr = null;
+
+        if (parts.length === 2) {
+          [alias, attr] = parts;
+          const realTable = aliasMap.get(alias.toUpperCase());
+          if (!realTable) {
+            return { success: false, error: { code: 315, message: `El identificador “${t.token}” no es válido.`, line: t.line } };
+          }
+          if (!(realTable in semanticaBD)) {
+            return { success: false, error: { code: 314, message: `La tabla referida por el alias “${alias}” no es válida.`, line: t.line } };
+          }
+          if (!semanticaBD[realTable].includes(attr.toUpperCase())) {
+            return { success: false, error: { code: 311, message: `El nombre del atributo “${attr}” no es válido.`, line: t.line } };
+          }
+        } else if (parts.length === 1) {
+          attr = parts[0].toUpperCase();
+          const matches = Array.from(tablas).filter(tabla => semanticaBD[tabla].includes(attr));
+          if (matches.length === 0) {
+            return { success: false, error: { code: 311, message: `El nombre del atributo “${attr}” no es válido.`, line: t.line } };
+          }
+          if (matches.length > 1) {
+            return { success: false, error: { code: 312, message: `El nombre del atributo “${attr}” es ambiguo.`, line: t.line } };
+          }
+        }
+      }
+
+      return { success: true };
+    }
+
+    function renderTokens(tokens) {
+      const resultDiv = document.getElementById("results");
+      let html = "<h2>Tokens</h2><table><thead><tr><th>#</th><th>Token</th><th>Tipo</th><th>Línea</th></tr></thead><tbody>";
+      tokens.forEach((t, i) => {
+        html += `<tr class="${t.error ? 'error-row' : ''}"><td>${i + 1}</td><td>${t.token}</td><td>${t.type}</td><td>${t.line}</td></tr>`;
+      });
+      html += "</tbody></table>";
+      resultDiv.innerHTML = html;
+    }
+
+    function renderSemanticTables() {
+      const semanticDiv = document.getElementById("semanticTables");
+      let html = "<table><thead><tr><th>Tabla</th><th>Atributos</th></tr></thead><tbody>";
+      for (const [tabla, atributos] of Object.entries(semanticaBD)) {
+        html += `<tr><td>${tabla}</td><td>${atributos.join(', ')}</td></tr>`;
+      }
+      html += "</tbody></table>";
+      semanticDiv.innerHTML = html;
+    }
+  </script>
+</body>
+</html>

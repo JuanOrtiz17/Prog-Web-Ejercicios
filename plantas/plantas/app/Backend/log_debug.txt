@@ -1,0 +1,34 @@
+RAW INPUT: 
+ERROR: JSON no válido
+RAW INPUT: 
+ERROR: JSON no válido
+RAW INPUT: 
+ERROR: JSON no válido
+RAW INPUT: 
+ERROR: JSON no válido
+RAW INPUT: 
+ERROR: JSON no válido
+RAW INPUT: 
+ERROR: JSON no válido
+RAW INPUT: 
+ERROR: JSON no válido
+RAW INPUT: 
+ERROR: JSON no válido
+RAW INPUT: 
+ERROR: JSON no válido
+RAW INPUT: 
+ERROR: JSON no válido
+RAW INPUT: 
+ERROR: JSON no válido
+RAW INPUT: 
+ERROR: JSON no válido
+RAW INPUT: 
+ERROR: JSON no válido
+RAW INPUT: 
+ERROR: JSON no válido
+RAW INPUT: 
+ERROR: JSON no válido
+RAW INPUT: 
+ERROR: JSON no válido
+ID_USUARIO recibido: 14
+Progreso encontrado para ID 14

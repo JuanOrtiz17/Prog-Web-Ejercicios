@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Escáner DML SQL</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        h1, h2 {
+            color: #333;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .input-area {
+            margin-bottom: 20px;
+        }
+        textarea {
+            width: 100%;
+            height: 150px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-family: monospace;
+            resize: vertical;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 10px;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        .result-section {
+            margin-top: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+            font-weight: bold;
+        }
+        .error {
+            color: red;
+            font-weight: bold;
+        }
+        .nav-tabs {
+            display: flex;
+            margin-bottom: 10px;
+            border-bottom: 1px solid #ddd;
+        }
+        .tab {
+            padding: 10px 15px;
+            cursor: pointer;
+            background-color: #f1f1f1;
+            border: 1px solid #ddd;
+            border-bottom: none;
+            border-radius: 4px 4px 0 0;
+            margin-right: 5px;
+        }
+        .tab.active {
+            background-color: white;
+            border-bottom: 1px solid white;
+        }
+        .tab-content {
+            display: none;
+        }
+        .tab-content.active {
+            display: block;
+        }
+        .default-query {
+            margin-bottom: 10px;
+            font-family: monospace;
+            background-color: #f8f8f8;
+            padding: 10px;
+            border-left: 3px solid #4CAF50;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Escáner DML SQL</h1>
+        
+        <div class="input-area">
+            <h2>Entrada</h2>
+            <div class="default-query">
+                SELECT ANOMBRE, CALIFICACION, TURNO<br>
+                FROM ALUMNOS, INSCRITOS, MATERIAS, CARRERAS<br>
+                WHERE MNOMBRE='LENAUT2' AND TURNO = 'TM'<br>
+                AND CNOMBRE='ISC' AND SEMESTRE='2023I' AND CALIFICACION >= 70
+            </div>
+            <textarea id="sqlInput" placeholder="Ingrese la consulta SQL aquí...">SELECT ANOMBRE, CALIFICACION, TURNO
+FROM ALUMNOS, INSCRITOS, MATERIAS, CARRERAS
+WHERE MNOMBRE='LENAUT2' AND TURNO = 'TM'
+AND CNOMBRE='ISC' AND SEMESTRE='2023I' AND CALIFICACION >= 70</textarea>
+            <button id="analyzeBtn">Analizar</button>
+            <button id="clearBtn">Limpiar</button>
+            <button id="defaultBtn">Cargar consulta por defecto</button>
+        </div>
+        
+        <div class="result-section">
+            <div class="nav-tabs">
+                <div class="tab active" data-tab="lexicalTable">Tabla Léxica</div>
+                <div class="tab" data-tab="identifiersTable">Tabla de Identificadores</div>
+                <div class="tab" data-tab="constantsTable">Tabla de Constantes</div>
+                <div class="tab" data-tab="errorsTable">Errores</div>
+            </div>
+            
+            <div id="lexicalTable" class="tab-content active">
+                <h2>Tabla Léxica</h2>
+                <table id="lexicalTableContent">
+                    <thead>
+                        <tr>
+                            <th>No.</th>
+                            <th>Línea</th>
+                            <th>TOKEN</th>
+                            <th>Tipo</th>
+                            <th>Código</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+            
+            <div id="identifiersTable" class="tab-content">
+                <h2>Tabla de Identificadores</h2>
+                <table id="identifiersTableContent">
+                    <thead>
+                        <tr>
+                            <th>Identificador</th>
+                            <th>Valor</th>
+                            <th>Línea</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+            
+            <div id="constantsTable" class="tab-content">
+                <h2>Tabla de Constantes</h2>
+                <table id="constantsTableContent">
+                    <thead>
+                        <tr>
+                            <th>No.</th>
+                            <th>Constante</th>
+                            <th>Tipo</th>
+                            <th>Valor</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+            
+            <div id="errorsTable" class="tab-content">
+                <h2>Errores</h2>
+                <div id="errorsContent"></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // References to DOM elements
+            const sqlInput = document.getElementById('sqlInput');
+            const analyzeBtn = document.getElementById('analyzeBtn');
+            const clearBtn = document.getElementById('clearBtn');
+            const defaultBtn = document.getElementById('defaultBtn');
+            const tabs = document.querySelectorAll('.tab');
+            const tabContents = document.querySelectorAll('.tab-content');
+            const lexicalTableContent = document.getElementById('lexicalTableContent').querySelector('tbody');
+            const identifiersTableContent = document.getElementById('identifiersTableContent').querySelector('tbody');
+            const constantsTableContent = document.getElementById('constantsTableContent').querySelector('tbody');
+            const errorsContent = document.getElementById('errorsContent');
+
+            // Default SQL query
+            const defaultQuery = `SELECT ANOMBRE, CALIFICACION, TURNO
+FROM ALUMNOS, INSCRITOS, MATERIAS, CARRERAS
+WHERE MNOMBRE='LENAUT2' AND TURNO = 'TM'
+AND CNOMBRE='ISC' AND SEMESTRE='2023I' AND CALIFICACION >= 70`;
+
+            // Map for token types
+            const tokenTypes = {
+                1: 'Palabra Reservada',
+                4: 'Identificador',
+                5: 'Delimitador',
+                6: 'Constante',
+                8: 'Relacional'
+            };
+
+            // Symbol tables
+            const reservedWords = {
+                'SELECT': { symbol: 's', value: 10 },
+                'FROM': { symbol: 'f', value: 11 },
+                'WHERE': { symbol: 'w', value: 12 },
+                'IN': { symbol: 'n', value: 13 },
+                'AND': { symbol: 'y', value: 14 },
+                'OR': { symbol: 'o', value: 15 },
+                'CREATE': { symbol: 'c', value: 16 },
+                'TABLE': { symbol: 't', value: 17 },
+                'CHAR': { symbol: 'h', value: 18 },
+                'NUMERIC': { symbol: 'u', value: 19 },
+                'NOT': { symbol: 'e', value: 20 },
+                'NULL': { symbol: 'g', value: 21 },
+                'CONSTRAINT': { symbol: 'b', value: 22 },
+                'KEY': { symbol: 'k', value: 23 },
+                'PRIMARY': { symbol: 'p', value: 24 },
+                'FOREIGN': { symbol: 'j', value: 25 },
+                'REFERENCES': { symbol: 'l', value: 26 },
+                'INSERT': { symbol: 'm', value: 27 },
+                'INTO': { symbol: 'q', value: 28 },
+                'VALUES': { symbol: 'v', value: 29 }
+            };
+
+            const delimiters = {
+                ',': { value: 50 },
+                '.': { value: 51 },
+                '(': { value: 52 },
+                ')': { value: 53 },
+                '\'': { value: 54 }
+            };
+
+            const operators = {
+                '+': { value: 70 },
+                '-': { value: 71 },
+                '*': { value: 72 },
+                '/': { value: 73 }
+            };
+
+            const relationalOperators = {
+                '>': { value: 81 },
+                '<': { value: 82 },
+                '=': { value: 83 },
+                '>=': { value: 84 },
+                '<=': { value: 85 }
+            };
+
+            // Dynamic tables
+            let identifiersTable = {};
+            let constantsTable = [];
+            let lexicalTable = [];
+            let errors = [];
+            let idCounter = 401; // Starting identifier ID
+            let constCounter = 600; // Starting constant ID
+
+            // Tab navigation
+            tabs.forEach(tab => {
+                tab.addEventListener('click', function() {
+                    const tabId = this.getAttribute('data-tab');
+                    
+                    // Update active tab
+                    tabs.forEach(t => t.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    // Show corresponding content
+                    tabContents.forEach(content => {
+                        content.classList.remove('active');
+                        if (content.id === tabId) {
+                            content.classList.add('active');
+                        }
+                    });
+                });
+            });
+
+            // Analyze button click handler
+            analyzeBtn.addEventListener('click', function() {
+                const sqlQuery = sqlInput.value.trim();
+                if (sqlQuery) {
+                    analyzeSQL(sqlQuery);
+                } else {
+                    displayError("Por favor, ingrese una consulta SQL para analizar.");
+                }
+            });
+
+            // Clear button click handler
+            clearBtn.addEventListener('click', function() {
+                sqlInput.value = '';
+                clearResults();
+            });
+
+            // Default button click handler
+            defaultBtn.addEventListener('click', function() {
+                sqlInput.value = defaultQuery;
+                analyzeSQL(defaultQuery);
+            });
+
+            // Function to clear all results
+            function clearResults() {
+                lexicalTableContent.innerHTML = '';
+                identifiersTableContent.innerHTML = '';
+                constantsTableContent.innerHTML = '';
+                errorsContent.innerHTML = '';
+                
+                // Reset dynamic tables
+                identifiersTable = {};
+                constantsTable = [];
+                lexicalTable = [];
+                errors = [];
+                idCounter = 401;
+                constCounter = 600;
+            }
+
+            // Function to display an error
+            function displayError(message) {
+                errorsContent.innerHTML = `<p class="error">${message}</p>`;
+                // Switch to errors tab
+                tabs.forEach(t => t.classList.remove('active'));
+                document.querySelector('.tab[data-tab="errorsTable"]').classList.add('active');
+                tabContents.forEach(content => content.classList.remove('active'));
+                document.getElementById('errorsTable').classList.add('active');
+            }
+
+            // Main function to analyze SQL query
+            function analyzeSQL(query) {
+                clearResults();
+                
+                // Normalize quotes - replace curly quotes and other quote variants with standard single quote
+                query = query.replace(/['']/g, "'");
+                
+                // Split the query into lines
+                const lines = query.split('\n').filter(line => line.trim() !== '');
+                
+                // Initialize token counters and position tracking
+                let tokenCount = 1;
+                let lineNumber = 0;
+                
+                // Analyze each line
+                lines.forEach((line, index) => {
+                    lineNumber = index + 1;
+                    tokenCount = analyzeLine(line, lineNumber, tokenCount);
+                });
+                
+                // Display results
+                renderLexicalTable();
+                renderIdentifiersTable();
+                renderConstantsTable();
+                
+                // If no errors, switch to lexical table view
+                if (errors.length === 0) {
+                    tabs[0].click();
+                } else {
+                    renderErrorsTable();
+                    tabs[3].click();
+                }
+            }
+
+            // Function to analyze a single line of SQL
+            function analyzeLine(line, lineNumber, startTokenCount) {
+                let tokenCount = startTokenCount;
+                let tokens = tokenizeLine(line);
+                
+                tokens.forEach(token => {
+                    processToken(token, lineNumber, tokenCount++);
+                });
+                
+                return tokenCount;
+            }
+
+            // Function to tokenize a line of SQL
+            function tokenizeLine(line) {
+                const tokens = [];
+                let i = 0;
+                
+                while (i < line.length) {
+                    // Skip whitespace
+                    if (/\s/.test(line[i])) {
+                        i++;
+                        continue;
+                    }
+                    
+                    // Check for identifiers (words)
+                    if (/[A-Za-z_]/.test(line[i])) {
+                        let word = '';
+                        while (i < line.length && /[A-Za-z0-9_]/.test(line[i])) {
+                            word += line[i++];
+                        }
+                        tokens.push(word);
+                        continue;
+                    }
+                    
+                    // Check for numerical constants
+                    if (/[0-9]/.test(line[i])) {
+                        let number = '';
+                        while (i < line.length && /[0-9.]/.test(line[i])) {
+                            number += line[i++];
+                        }
+                        tokens.push(number);
+                        continue;
+                    }
+                    
+                    // Check for string constants
+                    if (line[i] === '\'') {
+                        let string = '\'';
+                        i++;
+                        while (i < line.length && line[i] !== '\'') {
+                            string += line[i++];
+                        }
+                        if (i < line.length) {
+                            string += line[i++]; // Include closing quote
+                        }
+                        tokens.push(string);
+                        continue;
+                    }
+                    
+                    // Check for operators and delimiters
+                    if (line[i] === '>' || line[i] === '<') {
+                        if (i + 1 < line.length && line[i + 1] === '=') {
+                            tokens.push(line[i] + line[i + 1]);
+                            i += 2;
+                        } else {
+                            tokens.push(line[i++]);
+                        }
+                        continue;
+                    }
+                    
+                    // Check for equals and other single-character tokens
+                    if (line[i] === '=' || line[i] === ',' || line[i] === '(' || line[i] === ')' || 
+                        line[i] === '+' || line[i] === '-' || line[i] === '*' || line[i] === '/') {
+                        tokens.push(line[i++]);
+                        continue;
+                    }
+                    
+                    // Unknown character
+                    tokens.push(line[i++]);
+                }
+                
+                return tokens;
+            }
+
+            // Function to process a token
+            function processToken(token, lineNumber, tokenCount) {
+                // Check if token is a reserved word
+                const upperToken = token.toUpperCase();
+                if (reservedWords[upperToken]) {
+                    lexicalTable.push({
+                        no: tokenCount,
+                        line: lineNumber,
+                        token: upperToken,
+                        type: 1,
+                        code: reservedWords[upperToken].value
+                    });
+                    return;
+                }
+                
+                // Check if token is a delimiter
+                if (delimiters[token]) {
+                    lexicalTable.push({
+                        no: tokenCount,
+                        line: lineNumber,
+                        token: token,
+                        type: 5,
+                        code: delimiters[token].value
+                    });
+                    return;
+                }
+                
+                // Check if token is a relational operator
+                if (relationalOperators[token]) {
+                    lexicalTable.push({
+                        no: tokenCount,
+                        line: lineNumber,
+                        token: token,
+                        type: 8,
+                        code: relationalOperators[token].value
+                    });
+                    return;
+                }
+                
+                // Check if token is an operator
+                if (operators[token]) {
+                    lexicalTable.push({
+                        no: tokenCount,
+                        line: lineNumber,
+                        token: token,
+                        type: 7,
+                        code: operators[token].value
+                    });
+                    return;
+                }
+                
+                // Check if token is a string constant
+                if (token.startsWith('\'') && token.endsWith('\'')) {
+                    const constantValue = token.substring(1, token.length - 1);
+                    const constId = constCounter++;
+                    
+                    constantsTable.push({
+                        no: constantsTable.length + 1,
+                        constant: constantValue,
+                        type: 62, // Type for alphanumeric constants
+                        value: constId
+                    });
+                    
+                    lexicalTable.push({
+                        no: tokenCount,
+                        line: lineNumber,
+                        token: 'CONSTANTE',
+                        type: 6,
+                        code: constId
+                    });
+                    return;
+                }
+                
+                // Check if token is a numeric constant
+                if (/^[0-9]+(\.[0-9]+)?$/.test(token)) {
+                    const constId = constCounter++;
+                    
+                    constantsTable.push({
+                        no: constantsTable.length + 1,
+                        constant: token,
+                        type: 61, // Type for numeric constants
+                        value: constId
+                    });
+                    
+                    lexicalTable.push({
+                        no: tokenCount,
+                        line: lineNumber,
+                        token: token,
+                        type: 6,
+                        code: constId
+                    });
+                    return;
+                }
+                
+                // If we get here, it's an identifier
+                if (/^[A-Za-z_][A-Za-z0-9_]*$/.test(token)) {
+                    if (!identifiersTable[token]) {
+                        identifiersTable[token] = {
+                            id: idCounter++,
+                            lines: [lineNumber]
+                        };
+                    } else {
+                        if (!identifiersTable[token].lines.includes(lineNumber)) {
+                            identifiersTable[token].lines.push(lineNumber);
+                        }
+                    }
+                    
+                    lexicalTable.push({
+                        no: tokenCount,
+                        line: lineNumber,
+                        token: token,
+                        type: 4,
+                        code: identifiersTable[token].id
+                    });
+                    return;
+                }
+                
+                // If we get here, it's an unknown token
+                errors.push({
+                    line: lineNumber,
+                    token: token,
+                    message: `Token desconocido: "${token}"`
+                });
+            }
+
+            // Function to render the lexical table
+            function renderLexicalTable() {
+                lexicalTable.forEach(entry => {
+                    const row = document.createElement('tr');
+                    row.innerHTML = `
+                        <td>${entry.no}</td>
+                        <td>${entry.line}</td>
+                        <td>${entry.token}</td>
+                        <td>${tokenTypes[entry.type] || entry.type}</td>
+                        <td>${entry.code}</td>
+                    `;
+                    lexicalTableContent.appendChild(row);
+                });
+            }
+
+            // Function to render the identifiers table
+            function renderIdentifiersTable() {
+                for (const [id, details] of Object.entries(identifiersTable)) {
+                    const row = document.createElement('tr');
+                    row.innerHTML = `
+                        <td>${id}</td>
+                        <td>${details.id}</td>
+                        <td>${details.lines.join(', ')}</td>
+                    `;
+                    identifiersTableContent.appendChild(row);
+                }
+            }
+
+            // Function to render the constants table
+            function renderConstantsTable() {
+                constantsTable.forEach(entry => {
+                    const row = document.createElement('tr');
+                    row.innerHTML = `
+                        <td>${entry.no}</td>
+                        <td>${entry.constant}</td>
+                        <td>${entry.type}</td>
+                        <td>${entry.value}</td>
+                    `;
+                    constantsTableContent.appendChild(row);
+                });
+            }
+
+            // Function to render the errors table
+            function renderErrorsTable() {
+                if (errors.length === 0) {
+                    errorsContent.innerHTML = '<p>No se encontraron errores léxicos.</p>';
+                } else {
+                    const errorList = document.createElement('ul');
+                    errors.forEach(error => {
+                        const errorItem = document.createElement('li');
+                        errorItem.className = 'error';
+                        errorItem.textContent = `Línea ${error.line}: ${error.message}`;
+                        errorList.appendChild(errorItem);
+                    });
+                    errorsContent.appendChild(errorList);
+                }
+            }
+
+            // Initial analysis of the default query
+            analyzeBtn.click();
+        });
+    </script>
+</body>
+</html>
