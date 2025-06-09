@@ -1,0 +1,78 @@
+[debug] [2025-06-08T19:48:45.872Z] ----------------------------------------------------------------------
+[debug] [2025-06-08T19:48:45.879Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\juand\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js init
+[debug] [2025-06-08T19:48:45.879Z] CLI Version:   14.6.0
+[debug] [2025-06-08T19:48:45.880Z] Platform:      win32
+[debug] [2025-06-08T19:48:45.880Z] Node Version:  v22.16.0
+[debug] [2025-06-08T19:48:45.881Z] Time:          Sun Jun 08 2025 12:48:45 GMT-0700 (hora estándar del Pacífico de México)
+[debug] [2025-06-08T19:48:45.881Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2025-06-08T19:48:45.892Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2025-06-08T19:48:45.893Z] > authorizing via signed-in user (juandediosog04@gmail.com)
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  C:\Users\juand\Desktop\plantas
+
+[info] 
+=== Project Setup
+[info] 
+[info] First, let's associate this project directory with a Firebase project.
+[info] You can create multiple project aliases by running firebase use --add, 
+[info] but for now we'll just set up a default project.
+[info] 
+[debug] [2025-06-08T19:49:34.595Z] Checked if tokens are valid: true, expires at: 1749415710885
+[debug] [2025-06-08T19:49:34.595Z] Checked if tokens are valid: true, expires at: 1749415710885
+[debug] [2025-06-08T19:49:34.596Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects pageSize=100
+[debug] [2025-06-08T19:49:35.329Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects 200
+[debug] [2025-06-08T19:49:35.329Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects [omitted]
+[info] i  Using project plantasbcs-174fa (PlantasBCS) 
+[info] 
+=== Hosting Setup
+[debug] [2025-06-08T19:49:41.044Z] Checked if tokens are valid: true, expires at: 1749415710885
+[debug] [2025-06-08T19:49:41.044Z] Checked if tokens are valid: true, expires at: 1749415710885
+[debug] [2025-06-08T19:49:41.044Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/plantasbcs-174fa [none]
+[debug] [2025-06-08T19:49:41.570Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/plantasbcs-174fa 200
+[debug] [2025-06-08T19:49:41.571Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/plantasbcs-174fa {"projectId":"plantasbcs-174fa","projectNumber":"558339267418","displayName":"PlantasBCS","name":"projects/plantasbcs-174fa","resources":{"hostingSite":"plantasbcs-174fa"},"state":"ACTIVE","etag":"1_f5f5063e-5144-4616-8e98-dc8cd247cd79"}
+[info] 
+[info] Your public directory is the folder (relative to your project directory) that
+[info] will contain Hosting assets to be uploaded with firebase deploy. If you
+[info] have a build process for your assets, use your build's output directory.
+[info] 
+[debug] [2025-06-08T19:50:07.909Z] >>> [apiv2][query] GET https://www.gstatic.com/firebasejs/releases.json [none]
+[debug] [2025-06-08T19:50:08.089Z] <<< [apiv2][status] GET https://www.gstatic.com/firebasejs/releases.json 200
+[debug] [2025-06-08T19:50:08.089Z] <<< [apiv2][body] GET https://www.gstatic.com/firebasejs/releases.json {"current":{"version":"11.9.0","browserURL":"https://www.gstatic.com/firebasejs/11.9.0/firebase.js","packageURL":"https://www.gstatic.com/firebasejs/11.9.0/firebase.tgz"},"live":{"version":"11.9","browserURL":"https://www.gstatic.com/firebasejs/live/11.9/firebase.js","packageURL":"https://www.gstatic.com/firebasejs/live/11.9/firebase.tgz"},"components":{"ai":"https://www.gstatic.com/firebasejs/11.9.0/firebase-ai.js","analytics":"https://www.gstatic.com/firebasejs/11.9.0/firebase-analytics.js","app":"https://www.gstatic.com/firebasejs/11.9.0/firebase-app.js","app-check":"https://www.gstatic.com/firebasejs/11.9.0/firebase-app-check.js","auth":"https://www.gstatic.com/firebasejs/11.9.0/firebase-auth.js","auth/cordova":"https://www.gstatic.com/firebasejs/11.9.0/firebase-auth/cordova.js","auth/web-extension":"https://www.gstatic.com/firebasejs/11.9.0/firebase-auth/web-extension.js","functions":"https://www.gstatic.com/firebasejs/11.9.0/firebase-functions.js","firestore":"https://www.gstatic.com/firebasejs/11.9.0/firebase-firestore.js","firestore/lite":"https://www.gstatic.com/firebasejs/11.9.0/firebase-firestore/lite.js","installations":"https://www.gstatic.com/firebasejs/11.9.0/firebase-installations.js","storage":"https://www.gstatic.com/firebasejs/11.9.0/firebase-storage.js","performance":"https://www.gstatic.com/firebasejs/11.9.0/firebase-performance.js","remote-config":"https://www.gstatic.com/firebasejs/11.9.0/firebase-remote-config.js","messaging":"https://www.gstatic.com/firebasejs/11.9.0/firebase-messaging.js","messaging/sw":"https://www.gstatic.com/firebasejs/11.9.0/firebase-messaging/sw.js","database":"https://www.gstatic.com/firebasejs/11.9.0/firebase-database.js","vertexai":"https://www.gstatic.com/firebasejs/11.9.0/firebase-vertexai.js","data-connect":"https://www.gstatic.com/firebasejs/11.9.0/firebase-data-connect.js","firestore.memory":"https://www.gstatic.com/firebasejs/11.9.0/firebase-firestore.memory.js"}}
+[info] +  Wrote public/index.html 
+[info] 
+[info] i  Didn't detect a .git folder. Assuming C:\Users\juand\Desktop\plantas is the project root. 
+[info] i  Authorizing with GitHub to upload your service account to a GitHub repository's secrets store. 
+[info] 
+[info] Visit this URL on this device to log in:
+[info] https://github.com/login/oauth/authorize?client_id=89cf50f02ac6aaed3484&state=301864680&redirect_uri=http%3A%2F%2Flocalhost%3A9005&scope=read%3Auser%20repo%20public_repo
+[info] 
+[info] Waiting for authentication...
+[debug] [2025-06-08T19:52:32.743Z] >>> [apiv2][query] POST https://github.com/login/oauth/access_token [none]
+[debug] [2025-06-08T19:52:32.743Z] >>> [apiv2][body] POST https://github.com/login/oauth/access_token [stream]
+[debug] [2025-06-08T19:52:33.114Z] <<< [apiv2][status] POST https://github.com/login/oauth/access_token 200
+[debug] [2025-06-08T19:52:33.114Z] <<< [apiv2][body] POST https://github.com/login/oauth/access_token {"access_token":"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","token_type":"bearer","scope":"read:user,repo"}
+[debug] [2025-06-08T19:52:33.116Z] >>> [apiv2][query] GET https://api.github.com/user [none]
+[debug] [2025-06-08T19:52:33.491Z] <<< [apiv2][status] GET https://api.github.com/user 200
+[debug] [2025-06-08T19:52:33.491Z] <<< [apiv2][body] GET https://api.github.com/user {"login":"JuanOG14","id":125505990,"node_id":"U_kgDOB3sRxg","avatar_url":"https://avatars.githubusercontent.com/u/125505990?v=4","gravatar_id":"","url":"https://api.github.com/users/JuanOG14","html_url":"https://github.com/JuanOG14","followers_url":"https://api.github.com/users/JuanOG14/followers","following_url":"https://api.github.com/users/JuanOG14/following{/other_user}","gists_url":"https://api.github.com/users/JuanOG14/gists{/gist_id}","starred_url":"https://api.github.com/users/JuanOG14/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/JuanOG14/subscriptions","organizations_url":"https://api.github.com/users/JuanOG14/orgs","repos_url":"https://api.github.com/users/JuanOG14/repos","events_url":"https://api.github.com/users/JuanOG14/events{/privacy}","received_events_url":"https://api.github.com/users/JuanOG14/received_events","type":"User","user_view_type":"private","site_admin":false,"name":null,"company":null,"blog":"","location":null,"email":null,"hireable":null,"bio":null,"twitter_username":null,"notification_email":null,"public_repos":2,"public_gists":0,"followers":0,"following":0,"created_at":"2023-02-15T20:02:26Z","updated_at":"2025-06-08T19:51:22Z","private_gists":0,"total_private_repos":0,"owned_private_repos":0,"disk_usage":5,"collaborators":0,"two_factor_authentication":false,"plan":{"name":"free","space":976562499,"collaborators":0,"private_repos":10000}}
+[info] 
+[info] +  Success! Logged into GitHub as JuanOG14 
+[info] 
+[debug] [2025-06-08T19:52:33.496Z] >>> [apiv2][query] GET https://api.github.com/repos//actions/secrets/public-key type=owner
+[debug] [2025-06-08T19:52:33.668Z] <<< [apiv2][status] GET https://api.github.com/repos//actions/secrets/public-key 404
+[debug] [2025-06-08T19:52:33.668Z] <<< [apiv2][body] GET https://api.github.com/repos//actions/secrets/public-key {"message":"Not Found","documentation_url":"https://docs.github.com/rest","status":"404"}
+[info] 
+[info] 
+[error] !  The provided authorization cannot be used with this repository. If this repository is in an organization, did you remember to grant access? 
+[info] 
+[info] i  Action required: Visit this URL to ensure access has been granted to the appropriate organization(s) for the Firebase CLI GitHub OAuth App: 
+[info] https://github.com/settings/connections/applications/89cf50f02ac6aaed3484
+[info] 
