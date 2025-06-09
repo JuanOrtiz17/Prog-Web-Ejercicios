@@ -102,7 +102,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
 
   const iniciarSesion = async (email: string, password: string): Promise<boolean> => {
     try {
-      const res = await fetch("http://localhost/plantas/app/Backend/login.php", {
+      const res = await fetch("${process.env.NEXT_PUBLIC_API_URL}/login.php", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email, password }),

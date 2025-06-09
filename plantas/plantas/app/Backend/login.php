@@ -3,7 +3,7 @@ header("Access-Control-Allow-Origin: *");
 header("Access-Control-Allow-Headers: Content-Type");
 header("Content-Type: application/json");
 
-$conexion = new mysqli("localhost", "root", "", "plantas");
+$conexion = new mysqli("localhost", "uabcsdas_uabcsdas", "ef4T0(wK42]M", "uabcsdas_plantas");
 
 if ($conexion->connect_error) {
     echo json_encode(["exito" => false, "mensaje" => "Error de conexión con la base de datos"]);
